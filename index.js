@@ -1,4 +1,4 @@
-const carouselItems = document.querySelectorAll('.js-carousel__foordSpin-dishes');
+const carouselItems = document.querySelectorAll('.js-carousel-food-Spin-dishes');
 const prevButton = document.querySelector('.js-prev');
 const nextButton = document.querySelector('.js-next');
 

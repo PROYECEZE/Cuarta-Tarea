@@ -1,10 +1,9 @@
 body {
   font-family: sans-serif;
   background-color: #FFEEDE;
-  ;
 }
 
-.slide__foodSpin {
+.slide-food-Spin {
   position: relative;
   width: 600px;
   height: 600px;
@@ -12,13 +11,13 @@ body {
   margin-top: 15%;
 }
 
-.carousel__foodSpin {
+.carousel-food-Spin {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.carousel__foordSpin-dishes{
+.carousel-food-Spin__dishes{
   position: absolute;
   width: 100px;
   height: 100px;
@@ -28,61 +27,61 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-.carousel__foodSpin-img{
+.carousel-food-Spin__img{
   max-width: 100%;
   max-height: 100%;
 }
 
-.carousel__foordSpin-dishes.active {
-  transform: scale(3.0);
+.carousel-food-Spin__dishes.active {
+  transform: scale(2.2);
   z-index: 10;
 }
 
-.carousel__foordSpin-dishes:nth-child(1) {
+.carousel-food-Spin__dishes:nth-child(1) {
   top: 90px;
   left: 100px;
 }
 
-.carousel__foordSpin-dishes:nth-child(2) {
+.carousel-food-Spin__dishes:nth-child(2) {
   top: 0;
   left: 250px;
 }
 
-.carousel__foordSpin-dishes:nth-child(3) {
+.carousel-food-Spin__dishes:nth-child(3) {
   top: 100px;
   left: 400px;
 }
 
-.carousel__foordSpin-dishes:nth-child(4) {
+.carousel-food-Spin__dishes:nth-child(4) {
   top: 250px;
   right: 50px;
 }
 
-.carousel__foordSpin-dishes:nth-child(5) {
+.carousel-food-Spin__dishes:nth-child(5) {
   top: 400px;
   left: 400px;
 }
 
-.carousel__foordSpin-dishes:nth-child(6) {
+.carousel-food-Spin__dishes:nth-child(6) {
   top: 450px;
   left: 250px;
 }
 
-.carousel__foordSpin-dishes:nth-child(7) {
+.carousel-food-Spin__dishes:nth-child(7) {
   top: 400px;
   left: 100px;
 }
 
-.carousel__foordSpin-dishes:nth-child(8) {
+.carousel-food-Spin__dishes:nth-child(8) {
   top: 250px;
   left: 50px;
 }
 
-.carousel__foordSpin-dishes.active ~ .carousel__foordSpin-dishes{
+.carousel-food-Spin__dishes.active ~ .carousel-food-Spin__dishes{
   opacity: 0.5;
 }
 
-.carousel__foordSpin-controls {
+.carousel-food-Spin__controls {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -90,7 +89,7 @@ body {
   display: flex;
 }
 
-.carousel__foordSpin-control {
+.carousel-food-Spin__control {
   background-color: #ff9800;
   color: #fff;
   border: none;
