@@ -1,0 +1,15 @@
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-orange: #FF922C;
+  --color-black-small:#333333;
+
+  /* sizes */
+  --twenty-pixel: 20px;
+  --font-size-smalln: 13px;
+  --font-weight: 400;
+  --font-weight-small: 500;
+  --font-weight-bold: 600;
+  --width: 100%;
+  --zero: 0px;
+}

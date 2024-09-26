@@ -35,9 +35,9 @@ body {
 .food-spin__item {
   margin-right: 20px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--font-weight-small);
   line-height: 21px;
-  color: #333333;
+  color: var(--color-black-small);
   margin-right: 0px;
   text-decoration: none;
 }
@@ -64,26 +64,26 @@ body {
 
 .food-spin__price {
   font-size: 44px;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   line-height: 66px;
-  color: #FF922C;
+  color: var(--color-orange);
   margin: 0px;
 }
 
 .food-spin__title {
   font-size: 36px;
-  font-weight: 500;
+  font-weight: var(--font-weight-small);
   line-height: 50px;
   text-align: left;
-  color: #333333;
+  color: var(--color-black-small);
   margin-top: 10px;
 }
 
 .food-spin__description {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 19.5px;
-  color: #333333;
+  font-size: var(--font-size-smalln);
+  font-weight: var(--font-weight);
+  line-height: var(--twenty-pixel);
+  color: var(--color-black-small);
   margin-top: 12px;
   padding-right: 60px;
 }
@@ -91,14 +91,14 @@ body {
 .food-spin__order-button {
   background-color: #FF922C;
   box-shadow: 0px 20px 40px 0px #F4E2D1;
-  font-size: 13px;
+  font-size: var(--font-size-smalln);
   font-weight: 700;
-  line-height: 20px;
+  line-height: var(--twenty-pixel);
   border-radius: 69px;
   margin-top: 28px;
   padding: 14px 41px;
   text-align: left;
-  color: #fff;
+  color: var(--color-white);
   border: none;
   cursor: pointer;
 }
@@ -108,16 +108,15 @@ body {
 }
 
 .food-spin__video{
-  font-size: 13.16px;
-  font-weight: 400;
-  line-height: 19.74px;
+  font-size: var(--font-size-smalln);
+  font-weight: var(--font-weight);
+  line-height: var(--twenty-pixel);
   text-align: left;
   margin-top: 142px;
 }
 
-.food-spin__right{
-  width: 289px;
-  height: 294.96px;
+.food-spin__rigth{
+  margin-top: 10px;
 }
 
 .food-spin__Ellipse {
@@ -138,17 +137,15 @@ body {
   z-index: 3;
   display: flex;
   justify-content: flex-end;
-  overflow: hidden; /* Oculta imágenes que desborden el contenedor */
   clip-path: circle(150% at 50% -100%);
 }
 
 .carousel-food-spin {
-  width: 100%;
-  height: 100%;
+  width: var(--width);
+  height: var(--width);
   position: relative;
   padding-left: 0px;
   margin: 0px;
-  overflow: hidden; /* Oculta imágenes que desborden el contenedor */
 }
 
 .carousel-food-spin__dish {
