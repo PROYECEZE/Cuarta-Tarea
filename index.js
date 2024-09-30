@@ -163,13 +163,29 @@ function changeInterfaceColors(buttonColor, shadowColor, ellipseColor) {
   price.style.color = buttonColor;
 }
 
+function applyHoverEffect(color, hoverColor) {
+  button.style.backgroundColor = color;
+
+  button.addEventListener('mouseenter', () => {
+    button.style.backgroundColor = hoverColor; 
+  });
+
+  button.addEventListener('mouseleave', () => {
+    button.style.backgroundColor = color;
+  });
+}
+
 nextBtn.addEventListener('click', () => {
   changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE');
+
   updatePrice(32);
   updateTitle('Green Goddess Chicken Salad');
   updateDescription('It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.');
   description.style.paddingRight = '150px';
+
+  applyHoverEffect('#FF922C', '#ff6600');
 });
+
 
 prevBtn.addEventListener('click', () => {
   changeInterfaceColors('#54BF29', '#DBF4D1', '#EAFFE2');
@@ -178,4 +194,7 @@ prevBtn.addEventListener('click', () => {
   updateTitle('Asian Cucumber Salad');
   updateDescription('Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!');
   description.style.paddingRight = '200px';
+
+  applyHoverEffect('#54BF29', '#3F8F1F'); 
 });
+

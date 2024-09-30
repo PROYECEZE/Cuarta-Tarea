@@ -126,6 +126,11 @@ body {
 }
 
 .food-spin__order-button:hover {
+  --color-green:#1a4710;
+  background-color: var(--color-green);
+}
+
+.food-spin__order-button:hover {
   background-color: #ff6600;
 }
 
