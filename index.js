@@ -114,7 +114,6 @@ function initCarousel(options) {
   return new CustomCarousel(options);
 }
 
-
 var plugins = {
   customCarousel: document.querySelectorAll(".js-carousel-food-spin")
 };
@@ -131,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //color change//
-
 const prevBtn = document.querySelector('.js-prev');
 const nextBtn = document.querySelector('.js-next');
 const ellipse = document.querySelector('.js-food-spin-ellipse');
@@ -167,7 +165,6 @@ function changeInterfaceColors(buttonColor, shadowColor, ellipseColor) {
 
 nextBtn.addEventListener('click', () => {
   changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE');
-
   updatePrice(32);
   updateTitle('Green Goddess Chicken Salad');
   updateDescription('It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.');
