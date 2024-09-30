@@ -1,4 +1,3 @@
-console.clear();
 
 function initCarousel(options) {
   function CustomCarousel(options) {
@@ -155,15 +154,19 @@ function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
+function changeInterfaceColors(buttonColor, shadowColor, ellipseColor) {
+  ellipse.style.setProperty('--bg-color', ellipseColor);
+  prevBtn.style.setProperty('--bg-color', buttonColor);
+  prevBtn.style.setProperty('--shadow-bg', shadowColor);
+  nextBtn.style.setProperty('--bg-color', buttonColor);
+  nextBtn.style.setProperty('--shadow-bg', shadowColor);
+  button.style.setProperty('--bg-orange', buttonColor);
+  button.style.setProperty('--shadow-bg', shadowColor);
+  price.style.color = buttonColor;
+}
+
 nextBtn.addEventListener('click', () => {
-  ellipse.style.backgroundColor = '#FFEEDE'; 
-  prevBtn.style.backgroundColor = '#FF922C';
-  prevBtn.style.boxShadow = '0px 20px 40px 0px #F4E2D1';
-  nextBtn.style.backgroundColor = '#FF922C';
-  nextBtn.style.boxShadow = '0px 20px 40px 0px #F4E2D1';
-  button.style.backgroundColor = '#FF922C';
-  button.style.boxShadow = '0px 20px 40px 0px #F4E2D1';
-  price.style.color = '#FF922C';
+  changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE');
 
   updatePrice(32);
   updateTitle('Green Goddess Chicken Salad');
@@ -172,14 +175,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 prevBtn.addEventListener('click', () => {
-  ellipse.style.backgroundColor = '#EAFFE2'; 
-  prevBtn.style.backgroundColor = '#54BF29';
-  prevBtn.style.boxShadow = '0px 20px 40px 0px #DBF4D1';
-  nextBtn.style.backgroundColor = '#54BF29';
-  nextBtn.style.boxShadow = '0px 20px 40px 0px #DBF4D1';
-  button.style.backgroundColor = '#54BF29';
-  button.style.boxShadow = '0px 20px 40px 0px #DBF4D1';
-  price.style.color = '#54BF29';
+  changeInterfaceColors('#54BF29', '#DBF4D1', '#EAFFE2');
 
   updatePrice(35);
   updateTitle('Asian Cucumber Salad');

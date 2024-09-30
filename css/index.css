@@ -59,12 +59,13 @@ body {
 }
 
 .food-spin__ellipse {
+  --bg-color: var(--color-skin);
+  background-color: var(--bg-color);
   position: absolute;
   width: 1352px;
   height: 1118px;
   margin-left: 154px;
   top: -588px;
-  background-color: #FFEEDE;
   border-radius: 50%; 
   z-index: var(--zero);
   transition: background-color 0.3s ease;
@@ -107,8 +108,10 @@ body {
 }
 
 .food-spin__order-button {
-  background-color: #FF922C;
-  box-shadow: 0px 20px 40px 0px #F4E2D1;
+  --bg-orange: var(--color-orange);
+  background-color: var(--bg-orange);
+  --shadow-bg: var(--shadow-color);
+  box-shadow: 0px 20px 40px 0px var(--shadow-bg);
   font-size: var(--font-size-smalln);
   font-weight: 700;
   line-height: var(--twenty-pixel);
@@ -130,8 +133,11 @@ body {
   font-size: var(--font-size-smalln);
   font-weight: var(--font-weight);
   line-height: var(--twenty-pixel);
-  text-align: left;
   margin-top: 142px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
 }
 
 .food-spin__rigth {
@@ -236,8 +242,10 @@ body {
   cursor: pointer;
   padding: 14px;
   border-radius: 50%;
-  background-color: #FF922C;
-  box-shadow: 0px 10px 20px 0px #F5ECE3;
+  --bg-color: var(--color-orange);
+  background-color: var(--bg-color);
+  --shadow-bg: #F5ECE3;
+  box-shadow: 0 10px 20px 0 var(--shadow-bg);
   transition: background-color 0.3s ease;
   border: none;
 }
@@ -263,7 +271,7 @@ body {
   margin: 0px;
 }
 
-.carousel-food-spin__img1{
+.carousel-food-spin__item-img {
   max-width: 100px;
 }
 
