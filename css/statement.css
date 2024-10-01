@@ -1,0 +1,18 @@
+:root {
+  /* Colors */
+  --color-white: #FFFFFF;
+  --color-black-small:#333333;
+  --color-orange: #FF922C;
+  --shadow-color: #F4E2D1;
+  --color-skin: #FFEEDE;
+
+  /* sizes */
+  --twenty-pixel: 20px;
+  --font-size-smalln: 13px;
+  --font-weight: 400;
+  --font-weight-small: 500;
+  --font-weight-bold: 600;
+
+  --width: 100%;
+  --zero: 0px;
+}

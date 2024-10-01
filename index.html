@@ -4,63 +4,211 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/statement.css">
   <title>FoodSpin</title>
 </head>
 <body>
-  <header></header>
+  <header class="food-spin" aria-label="menu display">
+    <div class="food-spin__top">
+      <div class="food-spin__section">
+        <a href="index.html" aria-label="back to page">
+          <img class="food-spin__logo" src="image/logofood.png" alt="logofood">
+        </a>
+        <nav>
+          <ul class="food-spin__menu">
+            <li>
+              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Breakfast">Breakfast</a>
+            </li>
+            <li>
+              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Lunch">Lunch</a>
+            </li>
+            <li>
+              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see  Dinner">Dinner</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <a href="" aria-label="enter store">
+        <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g clip-path="url(#clip0_5_28)">
+            <path d="M4 7V5C4 3.67392 4.52678 2.40215 5.46447 1.46447C6.40215 0.526784 7.67392 0 9 0C10.3261 0 11.5979 0.526784 12.5355 1.46447C13.4732 2.40215 14 3.67392 14 5V7H17C17.2652 7 17.5196 7.10536 17.7071 7.29289C17.8946 7.48043 18 7.73478 18 8V20C18 20.2652 17.8946 20.5196 17.7071 20.7071C17.5196 20.8946 17.2652 21 17 21H1C0.734784 21 0.48043 20.8946 0.292893 20.7071C0.105357 20.5196 0 20.2652 0 20V8C0 7.73478 0.105357 7.48043 0.292893 7.29289C0.48043 7.10536 0.734784 7 1 7H4ZM4 9H2V19H16V9H14V11H12V9H6V11H4V9ZM6 7H12V5C12 4.20435 11.6839 3.44129 11.1213 2.87868C10.5587 2.31607 9.79565 2 9 2C8.20435 2 7.44129 2.31607 6.87868 2.87868C6.31607 3.44129 6 4.20435 6 5V7Z" fill="#090909" />
+            <circle cx="17" cy="19" r="3" fill="#FF922C" />
+          </g>
+          <defs>
+            <clipPath id="clip0_5_28">
+              <rect width="20" height="22" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
+    </div>
+  </header>
   <main>
-    <section>
-      <div class="slide-food-spin">
-        <ul class="carousel-food-spin" aria-label="available menus">
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish active">
-            <a href="" aria-label="click to see the menus of dish 1">
-              <img class="carousel-food-spin__img" src="image/food1.png" alt="dish 1">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 2">
-              <img class="carousel-food-spin__img" src="image/food2.png" alt="dish 2">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 3">
-              <img class="carousel-food-spin__img" src="image/food3.png" alt="dish 3">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish main">
-              <img class="carousel-food-spin__img" src="image/foodmain.png" alt="dish main">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 4">
-              <img class="carousel-food-spin__img" src="image/food4.png" alt="dish 4">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 5">
-              <img class="carousel-food-spin__img" src="image/food5.png" alt="dish 5">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 6">
-              <img class="carousel-food-spin__img" src="image/food1.png" alt="dish 6">
-            </a>
-          </li>
-          <li class="carousel-food-spin__dish js-carousel-food-spin-dish">
-            <a href="" aria-label="click to see the menus of dish 7">
-              <img class="carousel-food-spin__img" src="image/food2.png" alt="dish 7">
-            </a>
-          </li>
-          <li class="carousel-food-spin__controls js-carousel-foord-spin-dish">
-            <button class="carousel-food-spin__control js-prev" aria-label="see plates on the right">‹</button>
-            <button class="carousel-food-spin__control js-next" aria-label="see plates on the left">›</button>
-          </li>
-        </ul>
+    <section class="food-spin__info" aria-label="menu of available dishes">
+      <div class="food-spin__ellipse js-food-spin-ellipse" aria-hidden="true"></div>
+      <div class="food-spin__let" aria-label="information about the dishes">
+        <p class="food-spin__price js-food-spin-price" aria-label="price the dishes">$32</p>
+        <dl>
+          <dt class="food-spin__title js-food-spin-title">Green Goddess Chicken Salad</dt>
+          <dd class="food-spin__description js-food-spin-description">It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.</dd>
+        </dl>
+        <button class="food-spin__order-button js-food-spin-order-button" aria-label="place your order now">ORDER NOW</button>
+        <a href="#" class="food-spin__video" aria-hidden="true">Watch the Video</a>
+      </div>
+      <div class="food-spin__rigth">
+        <div class="slide-food-spin">
+          <div class="carousel-food-spin js-carousel-food-spin" data-speed="800">
+            <ul class="carousel-food-spin__dishs js-carousel-food-spin-dishs" aria-label="available menus">
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food1.png" alt="dish salad">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food2.png" alt="dish special">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food3.png" alt="dish main">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food4.png" alt="dish salty">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food5.png" alt="dish Mexican">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food1.png" alt="dish salad">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food2.png" alt="dish special">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food3.png" alt="dish main">
+                  </a>
+                </div>
+              </li>
+              <li class="carousel-food-spin__dish">
+                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+                  <a href="" aria-label="click to see the selected dish">
+                    <img class="carousel-food-spin__img" src="image/food4.png" alt="dish salty">
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="carousel-food-spin__snip">
+              <ul class="carousel-food-spin__pagination js-carousel-food-spin-pagination" aria-label="girator of dishes">
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 1">
+                      <img class="carousel-food-spin__item-img" src="image/food1.png" alt="dish 1">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 2">
+                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 2">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 3">
+                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 3">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 4">
+                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 5">
+                      <img class="carousel-food-spin__item-img" src="image/food5.png" alt="dish 5">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 1">
+                      <img class="carousel-food-spin__item-img" src="image/food1.png" alt="dish 1">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 2">
+                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 2">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 3">
+                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 3">
+                    </a>
+                  </div>
+                </li>
+                <li class="carousel-food-spin__item">
+                  <div class="carousel-food-spin__dot">
+                    <a href="" aria-label="click to see the menus of dish 4">
+                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button class="carousel-food-spin__prev js-prev" aria-label="see plates on the right">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7.00574 1.00001L0.999699 6.99396M7.00574 1.00001L12.9997 7.00605M7.00574 1.00001L6.99365 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="carousel-food-spin__next js-next" aria-label="see plates on the left">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7 13L13 7M7 13L1 7M7 13V1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
   <script src="index.js"></script>
 </body>
 </html>
+
+ 
 

@@ -1,102 +1,286 @@
 
 body {
   font-family: sans-serif;
-  background-color: #FFEEDE;
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+}
+
+.food-spin{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.food-spin__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.food-spin__section {
+  display: flex;
+  align-items: center;
+}
+
+.food-spin__logo{
+  margin-top: 5px;
+}
+
+.food-spin__menu {
+  display: flex;
+  list-style-type: none;
+  gap: 60px;
+  margin-left: 170px;
+  padding-left: 0px;
+}
+
+.food-spin__item {
+  margin-right: 20px;
+  font-size: 14px;
+  font-weight: var(--font-weight-small);
+  line-height: 21px;
+  color: var(--color-black-small);
+  margin-right: 0px;
+  text-decoration: none;
+}
+
+.food-spin__item:hover {
+  --hover-color: #ff6600;
+  color: var(--hover-color);
+}
+
+.food-spin__info{
+  display: flex;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-top: 126px;
+  gap: 82px;
+}
+
+.food-spin__ellipse {
+  --bg-color: var(--color-skin);
+  background-color: var(--bg-color);
+  position: absolute;
+  width: 1352px;
+  height: 1118px;
+  margin-left: 154px;
+  top: -588px;
+  border-radius: 50%; 
+  z-index: var(--zero);
+  transition: background-color 0.3s ease;
+}
+
+.food-spin__let {
+  border-radius: 10px;
+  text-align: center;
+  z-index: 3;
+  text-align: left;
+  margin-top: 80px;
+}
+
+.food-spin__price {
+  font-size: 44px;
+  font-weight: var(--font-weight-bold);
+  line-height: 66px;
+  color: var(--color-orange);
+  margin: var(--zero);
+  transition: background-color 0.2s ease;
+}
+
+.food-spin__title {
+  font-size: 36px;
+  font-weight: var(--font-weight-small);
+  line-height: 50px;
+  text-align: left;
+  color: var(--color-black-small);
+  padding-right: 120px;
+}
+
+.food-spin__description {
+  font-size: var(--font-size-smalln);
+  font-weight: var(--font-weight);
+  line-height: var(--twenty-pixel);
+  color: var(--color-black-small);
+  margin-top: 12px;
+  padding-right: 150px;
+  margin-left: 0px;
+}
+
+.food-spin__order-button {
+  --bg-orange: var(--color-orange);
+  background-color: var(--bg-orange);
+  --hover-color: #ff6600;
+  --shadow-bg: var(--shadow-color);
+  box-shadow: 0px 20px 40px 0px var(--shadow-bg);
+  font-size: var(--font-size-smalln);
+  font-weight: 700;
+  line-height: var(--twenty-pixel);
+  border-radius: 69px;
+  margin-top: 28px;
+  padding: 14px 41px;
+  text-align: left;
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-spin__order-button:hover {
+  background-color: var(--hover-color);
+}
+
+.food-spin__video{
+  font-size: var(--font-size-smalln);
+  font-weight: var(--font-weight);
+  line-height: var(--twenty-pixel);
+  margin-top: 142px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+}
+
+.food-spin__rigth {
+  min-height: 90vh;
+  margin-top: 56px;
+  flex-basis: 950px;
 }
 
 .slide-food-spin {
   position: relative;
-  width: 600px;
-  height: 600px;
+  max-width: 600px;
   margin: 0 auto;
-  margin-top: 15%;
 }
 
 .carousel-food-spin {
+  position: relative;
+  padding-top: 100%;
+}
+
+.carousel-food-spin__dishs {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  position: relative;
+  padding-left: 0px;
+  margin: 0px;
+  list-style-type: none;
 }
 
 .carousel-food-spin__dish {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
 }
 
-.carousel-food-spin__img {
-  max-width: 100%;
-  max-height: 100%;
-}
 
 .carousel-food-spin__dish.active {
-  transform: scale(2.2);
-  z-index: 10;
+  z-index: 1;
+  opacity: 1;
 }
 
-.carousel-food-spin__dish:nth-child(1) {
-  top: 90px;
-  left: 100px;
-}
-
-.carousel-food-spin__dish:nth-child(2) {
-  top: 0;
-  left: 250px;
-}
-
-.carousel-food-spin__dish:nth-child(3) {
-  top: 100px;
-  left: 400px;
-}
-
-.carousel-food-spin__dish:nth-child(4) {
-  top: 250px;
-  right: 50px;
-}
-
-.carousel-food-spin__dish:nth-child(5) {
-  top: 400px;
-  left: 400px;
-}
-
-.carousel-food-spin__dish:nth-child(6) {
-  top: 450px;
-  left: 250px;
-}
-
-.carousel-food-spin__dish:nth-child(7) {
-  top: 400px;
-  left: 100px;
-}
-
-.carousel-food-spin__dish:nth-child(8) {
-  top: 250px;
-  left: 50px;
-}
-
-.carousel-food-spin__dish.active ~ .carousel-food-spin__dish {
-  opacity: 0.5;
-}
-
-.carousel-food-spin__controls {
+.carousel-food-spin__snip{
+  clip-path: circle(149% at 0% -148%);
+  z-index: 3;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
+  width: 100%;
+  height: 100%;
 }
 
-.carousel-food-spin__control {
-  background-color: #ff9800;
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
+.carousel-food-spin__pagination{
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
-  margin: 0 10px;
-  cursor: pointer;
-  font-size: 20px;
+  border: 2px dashed #E87F1E;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+  user-select: none;
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
 }
+
+.carousel-food-spin__item{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.carousel-food-spin__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: auto;
+  transition: 0.2s;
+}
+
+.carousel-food-spin__next,
+.carousel-food-spin__prev{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 13%;
+  z-index: 1;
+  letter-spacing: 0.3em;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 14px;
+  border-radius: 50%;
+  --bg-color: var(--color-orange);
+  background-color: var(--bg-color);
+  --shadow-bg: #F5ECE3;
+  box-shadow: 0 10px 20px 0 var(--shadow-bg);
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.carousel-food-spin__next:hover,
+.carousel-food-spin__prev:hover{
+  --hover-color: #ff6600;
+  background-color: var(--hover-color);
+}
+
+.carousel-food-spin__next {
+  right: -10%;
+}
+.carousel-food-spin__prev {
+  left: -10%;
+}
+
+.carousel-food-spin__main {
+  position: absolute;
+  top: 57%;
+  margin-left: 250px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 10;
+}
+
+.carousel-food-spin__img {
+  width: 290px;
+  margin: 0px;
+}
+
+.carousel-food-spin__item-img {
+  max-width: 100px;
+}
+
+
