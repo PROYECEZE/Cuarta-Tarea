@@ -47,7 +47,8 @@ body {
 }
 
 .food-spin__item:hover {
-  color: #FF922C;
+  --hover-color: #ff6600;
+  color: var(--hover-color);
 }
 
 .food-spin__info{
@@ -110,6 +111,7 @@ body {
 .food-spin__order-button {
   --bg-orange: var(--color-orange);
   background-color: var(--bg-orange);
+  --hover-color: #ff6600;
   --shadow-bg: var(--shadow-color);
   box-shadow: 0px 20px 40px 0px var(--shadow-bg);
   font-size: var(--font-size-smalln);
@@ -126,7 +128,7 @@ body {
 }
 
 .food-spin__order-button:hover {
-  background-color: #ff6600;
+  background-color: var(--hover-color);
 }
 
 .food-spin__video{
@@ -248,6 +250,12 @@ body {
   box-shadow: 0 10px 20px 0 var(--shadow-bg);
   transition: background-color 0.3s ease;
   border: none;
+}
+
+.carousel-food-spin__next:hover,
+.carousel-food-spin__prev:hover{
+  --hover-color: #ff6600;
+  background-color: var(--hover-color);
 }
 
 .carousel-food-spin__next {

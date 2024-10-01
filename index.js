@@ -137,6 +137,7 @@ const button = document.querySelector('.js-food-spin-order-button');
 const price = document.querySelector('.js-food-spin-price');
 const title = document.querySelector('.js-food-spin-title');
 const description = document.querySelector('.js-food-spin-description');
+const items = [...document.querySelectorAll('.js-food-spin-item')];
 
 let currentPrice = 32;
 
@@ -152,49 +153,39 @@ function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
-function changeInterfaceColors(buttonColor, shadowColor, ellipseColor) {
+function changeInterfaceColors(buttonColor, shadowColor, ellipseColor, hoverColor) {
   ellipse.style.setProperty('--bg-color', ellipseColor);
   prevBtn.style.setProperty('--bg-color', buttonColor);
   prevBtn.style.setProperty('--shadow-bg', shadowColor);
+  prevBtn.style.setProperty('--hover-color', hoverColor);
   nextBtn.style.setProperty('--bg-color', buttonColor);
   nextBtn.style.setProperty('--shadow-bg', shadowColor);
+  nextBtn.style.setProperty('--hover-color', hoverColor);
   button.style.setProperty('--bg-orange', buttonColor);
   button.style.setProperty('--shadow-bg', shadowColor);
+  button.style.setProperty('--hover-color', hoverColor);
+
+  items.forEach(item => {
+    item.style.setProperty('--hover-color', hoverColor);
+  });
+
   price.style.color = buttonColor;
 }
 
-function applyHoverEffect(color, hoverColor) {
-  button.style.backgroundColor = color;
-
-  button.addEventListener('mouseenter', () => {
-    button.style.backgroundColor = hoverColor; 
-  });
-
-  button.addEventListener('mouseleave', () => {
-    button.style.backgroundColor = color;
-  });
-}
-
 nextBtn.addEventListener('click', () => {
-  changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE');
+  changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE', '#ff6600');
 
   updatePrice(32);
   updateTitle('Green Goddess Chicken Salad');
   updateDescription('It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.');
   description.style.paddingRight = '150px';
-
-  applyHoverEffect('#FF922C', '#ff6600');
 });
 
-
 prevBtn.addEventListener('click', () => {
-  changeInterfaceColors('#54BF29', '#DBF4D1', '#EAFFE2');
+  changeInterfaceColors('#54BF29', '#DBF4D1', '#EAFFE2', '#3F8F1F');
 
   updatePrice(35);
   updateTitle('Asian Cucumber Salad');
   updateDescription('Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!');
   description.style.paddingRight = '200px';
-
-  applyHoverEffect('#54BF29', '#3F8F1F'); 
 });
-
