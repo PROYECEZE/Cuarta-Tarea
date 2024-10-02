@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 //color change//
 const prevBtn = document.querySelector('.js-prev');
 const nextBtn = document.querySelector('.js-next');
@@ -188,4 +189,58 @@ prevBtn.addEventListener('click', () => {
   updateTitle('Asian Cucumber Salad');
   updateDescription('Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!');
   description.style.paddingRight = '200px';
+
 });
+
+class Dishes extends HTMLElement {
+  constructor() {
+    super();
+    const price = this.getAttribute("data-price");
+    const name = this.getAttribute("name");
+    const title = this.getAttribute("data-title");
+    const description = this.getAttribute("data-description");
+    const html = /* html */ `
+      <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
+      <a href="#" class="js-dish-link" data-price="${price}" data-title="${title}" data-description="${description}" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__img" src="image/${name}" alt="dish ${name}">
+        </a>
+      </div>
+    `;
+    this.insertAdjacentHTML("beforeend", html);
+  }
+}
+
+customElements.define("dishe-element", Dishes);
+
+
+document.querySelectorAll('.js-dish-link').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+
+    const newPrice = this.getAttribute('data-price');
+    const newTitle = this.getAttribute('data-title');
+    const newDescription = this.getAttribute('data-description');
+
+    updatePrice(newPrice);
+    updateTitle(newTitle);
+    updateDescription(newDescription);
+  });
+});
+
+function updatePrice(newPrice) {
+  const priceElement = document.querySelector('.js-food-spin-price');
+  priceElement.textContent = `$${newPrice}`;
+}
+
+function updateTitle(newTitle) {
+  const titleElement = document.querySelector('.js-food-spin-title');
+  titleElement.textContent = newTitle;
+}
+
+function updateDescription(newDescription) {
+  const descriptionElement = document.querySelector('.js-food-spin-description');
+  descriptionElement.textContent = newDescription;
+}
+
+
