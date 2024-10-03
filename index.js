@@ -179,7 +179,6 @@ nextBtn.addEventListener('click', () => {
   updatePrice(32);
   updateTitle('Green Goddess Chicken Salad');
   updateDescription('It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.');
-  description.style.paddingRight = '150px';
 });
 
 prevBtn.addEventListener('click', () => {
@@ -188,21 +187,19 @@ prevBtn.addEventListener('click', () => {
   updatePrice(35);
   updateTitle('Asian Cucumber Salad');
   updateDescription('Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!');
-  description.style.paddingRight = '200px';
-
 });
 
 class Dishes extends HTMLElement {
   constructor() {
     super();
-    const price = this.getAttribute("data-price");
-    const name = this.getAttribute("name");
-    const title = this.getAttribute("data-title");
-    const description = this.getAttribute("data-description");
-    const html = /* html */ `
+    const price = this.getAttribute("price");
+    const image = this.getAttribute("image");
+    const title= this.getAttribute("title");
+    const description = this.getAttribute("description");
+    const html =`
       <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-      <a href="#" class="js-dish-link" data-price="${price}" data-title="${title}" data-description="${description}" aria-label="click to see the selected dish">
-        <img class="carousel-food-spin__img" src="image/${name}" alt="dish ${name}">
+      <a href="#" class="js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__img" src="image/${image}" alt="dish ${image}">
         </a>
       </div>
     `;
@@ -218,9 +215,9 @@ document.querySelectorAll('.js-dish-link').forEach(link => {
     event.preventDefault(); 
 
 
-    const newPrice = this.getAttribute('data-price');
-    const newTitle = this.getAttribute('data-title');
-    const newDescription = this.getAttribute('data-description');
+    const newPrice = this.getAttribute('price');
+    const newTitle = this.getAttribute('title');
+    const newDescription = this.getAttribute('description');
 
     updatePrice(newPrice);
     updateTitle(newTitle);

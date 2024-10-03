@@ -63,9 +63,9 @@ body {
   --bg-color: var(--color-skin);
   background-color: var(--bg-color);
   position: absolute;
-  width: 1352px;
-  height: 1118px;
-  margin-left: 154px;
+  width: 1294px;
+  height: 1131px;
+  margin-left: 162px;
   top: -588px;
   border-radius: 50%; 
   z-index: var(--zero);
@@ -74,10 +74,10 @@ body {
 
 .food-spin__let {
   border-radius: 10px;
-  text-align: center;
   z-index: 3;
   text-align: left;
   margin-top: 80px;
+  flex-basis: 400px;
 }
 
 .food-spin__price {
@@ -95,7 +95,6 @@ body {
   line-height: 50px;
   text-align: left;
   color: var(--color-black-small);
-  padding-right: 120px;
 }
 
 .food-spin__description {
@@ -104,8 +103,8 @@ body {
   line-height: var(--twenty-pixel);
   color: var(--color-black-small);
   margin-top: 12px;
-  padding-right: 150px;
   margin-left: 0px;
+  padding-right: 10px;
 }
 
 .food-spin__order-button {
@@ -144,14 +143,14 @@ body {
 
 .food-spin__rigth {
   min-height: 90vh;
-  margin-top: 56px;
-  flex-basis: 950px;
+  margin-top: 65px;
+  flex-basis: 750px;
 }
 
 .slide-food-spin {
   position: relative;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 500px;
+  margin-left: 20%;
 }
 
 .carousel-food-spin {
@@ -232,12 +231,16 @@ body {
   transition: 0.2s;
 }
 
+.carousel-food-spin__prev-next{
+  display: flex;
+  justify-content: space-between;
+  margin-top: -130px;
+}
+
 .carousel-food-spin__next,
 .carousel-food-spin__prev{
   display: flex;
   align-items: center;
-  position: absolute;
-  bottom: 13%;
   z-index: 1;
   letter-spacing: 0.3em;
   transition: 0.3s;
@@ -259,10 +262,10 @@ body {
 }
 
 .carousel-food-spin__next {
-  right: -10%;
+  margin-right: -4%;
 }
 .carousel-food-spin__prev {
-  left: -10%;
+  margin-left: -4%;
 }
 
 .carousel-food-spin__main {
