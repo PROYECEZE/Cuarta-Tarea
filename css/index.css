@@ -27,7 +27,6 @@ body {
 .food-spin__logo{
   margin-top: 5px;
 }
-
 .food-spin__menu {
   display: flex;
   list-style-type: none;
@@ -42,13 +41,53 @@ body {
   font-weight: var(--font-weight-small);
   line-height: 21px;
   color: var(--color-black-small);
-  margin-right: 0px;
   text-decoration: none;
+  position: relative;
 }
 
 .food-spin__item:hover {
   --hover-color: #ff6600;
   color: var(--hover-color);
+}
+
+.food-spin__submenu {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  border-radius: 5px;
+  --hover-color: #ff6600;
+  box-shadow: 0px 2px 8px 0px var(--hover-color);
+  width: 200px; 
+  z-index: 10; 
+}
+
+.food-spin__item:hover .food-spin__submenu {
+  display: flex;
+}
+
+.food-spin__submenu-li {
+  font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.food-spin__submenu-li:hover {
+  --hover-color: #ff6600;
+  background-color: var(--hover-color);
+  color: var(--color-white);
+}
+
+.food-spin__submenu-li:focus {
+  --hover-color: #ff6600;
+  color: var(--hover-color);
+  outline: 2px solid var(--hover-color);
+  outline-offset: 2px;
 }
 
 .food-spin__info{
@@ -199,7 +238,8 @@ body {
   width: 90%;
   height: 90%;
   border-radius: 50%;
-  border: 2px dashed #E87F1E;
+  --bg-orange: var(--color-orange);
+  border: 2px dashed var(--bg-orange);
   transition-property: transform;
   transition-timing-function: ease-out;
   pointer-events: none;
@@ -284,6 +324,11 @@ body {
 
 .carousel-food-spin__item-img {
   max-width: 100px;
+}
+
+.js-dish-link{
+  text-decoration: none;
+  --hover-color: #9ca3ff;
 }
 
 

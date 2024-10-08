@@ -16,18 +16,27 @@
           <img class="food-spin__logo" src="image/logofood.png" alt="logofood">
         </a>
         <nav>
-          <ul class="food-spin__menu">
-            <li>
-              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Breakfast">Breakfast</a>
-            </li>
-            <li>
-              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Lunch">Lunch</a>
-            </li>
-            <li>
-              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see  Dinner">Dinner</a>
-            </li>
-          </ul>
-        </nav>
+          <nav>
+            <ul class="food-spin__menu">
+              <li>
+                <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Breakfast">Breakfast</a>
+                <ul class="food-spin__submenu">
+                  <li"><a href="#" class="food-spin__submenu-li" aria-label="see Eggs">Eggs</a></li>
+                  <li"><a href="#" class="food-spin__submenu-li" aria-label="see Pancakes">Pancakes</a></li>
+                  <li"><a href="#" class="food-spin__submenu-li" aria-label="see Omelette">Omelette</a></li>
+                  <li"><a href="#" class="food-spin__submenu-li" aria-label="see Breakfast Burrito">Breakfast Burrito</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Lunch">Lunch</a>
+              </li>
+              <li>
+                <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Dinner">Dinner</a>
+              </li>
+            </ul>
+          </nav>
+          
+        </nav> 
       </div>
       <a href="" aria-label="enter store">
         <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -61,97 +70,61 @@
           <div class="carousel-food-spin js-carousel-food-spin" data-speed="800">
             <ul class="carousel-food-spin__dishs js-carousel-food-spin-dishs" aria-label="available menus">
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food3.png" price="32" title="Green Goddess Chicken Salad" description="It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery."></dishe-element>
+                <dishe-element image="food3.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food2.png" price="29" title="Agnolotti Pasta Salad With Ricotta" description="A simple pasta salad with delicious ricotta for an easy weeknight meal!"></dishe-element>
+                <dishe-element image="food2.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food5.png" price="70" title="Grilled Salmon Salad" description="Salmon Greek Salad with Lemon Basil Dressing - A light and healthy recipe that tastes amazing!"></dishe-element>
+                <dishe-element image="food5.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food4.png" price="40" title="Asian Cucumber Salad" description="Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!"></dishe-element>
+                <dishe-element image="food4.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food3.png" price="100" title="Autumn Cobb Salad" description="Roasted squash, crunchy apples and dried cherries add seasonal freshness dressed in a spiced apple cider vinaigrette and topped with candied walnuts."></dishe-element>
+                <dishe-element image="food3.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food2.png" price="24" title="Creamy Lemon Basil & Zucchini Pasta" description="Creamy Lemon Basil & Zucchini Pasta. Getting super into spring for another night with this simple but delicious creamy pasta.!"></dishe-element>
+                <dishe-element image="food2.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food5.png" price="90" title="Salmon Salad" description="This salmon salad is incredibly nutritious and loaded with flavor! Baked salmon filets are placed atop a bed of fresh greens."></dishe-element>
+                <dishe-element image="food5.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food1.png" price="66" title="A healthful winter salad" description="A mix of winter vegetables and fruits, beet, citrus fruits, and roasted and very delicious nuts!"></dishe-element>
+                <dishe-element image="food1.png"></dishe-element>
               </li>
               <li class="carousel-food-spin__dish">
-                <dishe-element image="food4.png" price="50" title="Shrimp, cucumber and avocado salad." description="Healthy meal, Vegetarian and protein-rich food, easy to make and affordable."></dishe-element>
+                <dishe-element image="food4.png"></dishe-element>
               </li>
             </ul>
             <div class="carousel-food-spin__snip">
               <ul class="carousel-food-spin__pagination js-carousel-food-spin-pagination" aria-label="girator of dishes">
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 1">
-                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 1">
-                    </a>
-                  </div>
+                  <dishe-plato image="food3.png" price="32" title="Green Goddess Chicken Salad" description="It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery."></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 2">
-                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 2">
-                    </a>
-                  </div>
+                  <dishe-plato image="food2.png" price="29" title="Agnolotti Pasta Salad With Ricotta" description="A simple pasta salad with delicious ricotta for an easy weeknight meal!"></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 3">
-                      <img class="carousel-food-spin__item-img" src="image/food5.png" alt="dish 3">
-                    </a>
-                  </div>
+                  <dishe-plato image="food5.png" price="70" title="Grilled Salmon Salad" description="Salmon Greek Salad with Lemon Basil Dressing - A light and healthy recipe that tastes amazing!"></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 4">
-                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
-                    </a>
-                  </div>
+                  <dishe-plato image="food4.png" price="40" title="Asian Cucumber Salad" description="Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!"></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 5">
-                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 5">
-                    </a>
-                  </div>
+                  <dishe-plato image="food3.png" price="100" title="Autumn Cobb Salad" description="Roasted squash, crunchy apples and dried cherries add seasonal freshness dressed in a spiced apple cider vinaigrette and topped with candied walnuts."></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 1">
-                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 1">
-                    </a>
-                  </div>
+                  <dishe-plato image="food2.png" price="24" title="Creamy Lemon Basil & Zucchini Pasta" description="Creamy Lemon Basil & Zucchini Pasta. Getting super into spring for another night with this simple but delicious creamy pasta.!"></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 4">
-                      <img class="carousel-food-spin__item-img" src="image/food5.png" alt="dish 2">
-                    </a>
-                  </div>
+                  <dishe-plato image="food5.png" price="90" title="Salmon Salad" description="This salmon salad is incredibly nutritious and loaded with flavor! Baked salmon filets are placed atop a bed of fresh greens."></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 3">
-                      <img class="carousel-food-spin__item-img" src="image/food1.png" alt="dish 3">
-                    </a>
-                  </div>
+                  <dishe-plato image="food1.png" price="66" title="A healthful winter salad" description="A mix of winter vegetables and fruits, beet, citrus fruits, and roasted and very delicious nuts!"></dishe-plato>
                 </li>
                 <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 4">
-                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
-                    </a>
-                  </div>
+                  <dishe-plato image="food4.png" price="50" title="Shrimp, cucumber and avocado salad." description="Healthy meal, Vegetarian and protein-rich food, easy to make and affordable."></dishe-plato>
                 </li>
               </ul>
             </div>
