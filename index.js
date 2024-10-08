@@ -138,6 +138,7 @@ const title = document.querySelector('.js-food-spin-title');
 const description = document.querySelector('.js-food-spin-description');
 const pagination = document.querySelector('.js-carousel-food-spin-pagination');
 const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
+const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 
 let currentIndex = 0;
@@ -165,6 +166,10 @@ function changeInterfaceColors(dishInfo) {
 
   menuItems.forEach(item => {
     item.style.setProperty('--hover-color', colorSet.hoverColor);
+  });
+
+  ItenSubmenu.forEach(submenu => {
+    submenu.style.setProperty('--hover-color', colorSet.hoverColor);
   });
 
   price.style.color = colorSet.buttonColor;

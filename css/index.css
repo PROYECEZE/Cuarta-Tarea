@@ -81,13 +81,11 @@ body {
 
 
 .food-spin__submenu-li:hover {
-  --hover-color: #ff6600;
   background-color: var(--hover-color);
   color: var(--color-white);
 }
 
 .food-spin__submenu-li:focus {
-  --hover-color: #ff6600;
   color: var(--hover-color);
   outline: 2px solid var(--hover-color);
   outline-offset: 2px;
@@ -327,11 +325,6 @@ body {
 
 .carousel-food-spin__item-img {
   max-width: 100px;
-}
-
-.js-dish-link{
-  text-decoration: none;
-  --hover-color: #9ca3ff;
 }
 
 
