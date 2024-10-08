@@ -137,105 +137,22 @@ const price = document.querySelector('.js-food-spin-price');
 const title = document.querySelector('.js-food-spin-title');
 const description = document.querySelector('.js-food-spin-description');
 const pagination = document.querySelector('.js-carousel-food-spin-pagination');
-const items = [...document.querySelectorAll('.js-food-spin-item')];
+const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
+const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 
-const colors = [
-  {
-    paginationColor: '#FF922C',
-    buttonColor: '#FF922C',
-    shadowColor: '#F4E2D1',
-    ellipseColor: '#FFEEDE',
-    hoverColor: '#ff6600',
-    price: 32,
-    title: 'Green Goddess Chicken Salad',
-    description: 'It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.'
-  },
-  {
-    paginationColor: '#54BF29',
-    buttonColor: '#54BF29',
-    shadowColor: '#DBF4D1',
-    ellipseColor: '#EAFFE2',
-    hoverColor: '#3F8F1F',
-    price: 29,
-    title: 'Agnolotti Pasta Salad With Ricotta',
-    description: 'A simple pasta salad with delicious ricotta for an easy weeknight meal!'
-  },
-  {
-    paginationColor: '#c651cf',
-    buttonColor: '#c651cf',
-    shadowColor: '#ebb9ee',
-    ellipseColor: '#efd5f0',
-    hoverColor: '#6c0673',
-    price: 70,
-    title: 'Grilled Salmon Salad',
-    description: 'Salmon Greek Salad with Lemon Basil Dressing - A light and healthy recipe that tastes amazing!'
-  },
-  {
-    paginationColor: '#18c6e9',
-    buttonColor: '#18c6e9',
-    shadowColor: '#b7ebf6',
-    ellipseColor: '#def5f9',
-    hoverColor: '#005363',
-    price: 40,
-    title: 'Asian Cucumber Salad',
-    description: 'Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!'
-  },
-  {
-    paginationColor: '#e40000',
-    buttonColor: '#e40000',
-    shadowColor: '#fca1a1',
-    ellipseColor: '#f5d9d9',
-    hoverColor: '#880000',
-    price: 100,
-    title: 'Autumn Cobb Salad',
-    description: 'Roasted squash, crunchy apples and dried cherries add seasonal freshness dressed in a spiced apple cider vinaigrette and topped with candied walnuts.'
-  },
-  {
-    paginationColor: '#c8c803',
-    buttonColor: '#c8c803',
-    shadowColor: '#ddddb0',
-    ellipseColor: '#f5f5d9',
-    hoverColor: '#676702',
-    price: 24,
-    title: 'Creamy Lemon Basil & Zucchini Pasta',
-    description: 'Creamy Lemon Basil & Zucchini Pasta. Getting super into spring for another night with this simple but delicious creamy pasta.!'
-  },
-  {
-    paginationColor: '#7771c4',
-    buttonColor: '#7771c4',
-    shadowColor: '#9c99ca',
-    ellipseColor: '#dcdaeb',
-    hoverColor: '#352f95',
-    price: 90,
-    title: 'Salmon Salad',
-    description: 'This salmon salad is incredibly nutritious and loaded with flavor! Baked salmon filets are placed atop a bed of fresh greens.'
-  },
-  {
-    paginationColor: '#4fd299',
-    buttonColor: '#4fd299',
-    shadowColor: '#c4e6d7',
-    ellipseColor: '#e8f4ee',
-    hoverColor: '#019a57',
-    price: 66,
-    title: 'A healthful winter salad',
-    description: 'A mix of winter vegetables and fruits, beet, citrus fruits, and roasted and very delicious nuts!'
-  },
-  {
-    paginationColor: ' #4143e8',
-    buttonColor: '#4a4dff',
-    shadowColor: '#b6b2f3',
-    ellipseColor: '#9ca3ff',
-    hoverColor: '#04067b',
-    price: 50,
-    title: 'Shrimp, cucumber and avocado salad.',
-    description: 'Healthy meal, Vegetarian and protein-rich food, easy to make and affordable.'
-  },
-];
+let currentIndex = 0;
 
-let currentIndex = 0; 
-function changeInterfaceColors(colorSet) {
+function changeInterfaceColors(dishInfo) {
+  const colorSet = {
+    ellipseColor: dishInfo.getAttribute('ellipseColor'),
+    shadowColor: dishInfo.getAttribute('shadowColor'),
+    buttonColor: dishInfo.getAttribute('buttonColor'),
+    hoverColor: dishInfo.getAttribute('hoverColor'),
+  };
+
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
-  pagination.style.setProperty('--bg-orange',colorSet.paginationColor);
+  pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
+  price.style.setProperty('--bg-orange', colorSet.buttonColor);
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
   prevBtn.style.setProperty('--hover-color', colorSet.hoverColor);
@@ -246,35 +163,32 @@ function changeInterfaceColors(colorSet) {
   button.style.setProperty('--shadow-bg', colorSet.shadowColor);
   button.style.setProperty('--hover-color', colorSet.hoverColor);
 
-
-  items.forEach(item => {
+  menuItems.forEach(item => {
     item.style.setProperty('--hover-color', colorSet.hoverColor);
   });
-  
+
   price.style.color = colorSet.buttonColor;
-  }
+}
+
+function updateDishDetails(currentDish) {
+  const dishInfo = currentDish.querySelector('dishe-plato');
+  changeInterfaceColors(dishInfo);
+  updatePrice(dishInfo.getAttribute('price'));
+  updateTitle(dishInfo.getAttribute('title'));
+  updateDescription(dishInfo.getAttribute('description'));
+}
+
+
 
 nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % colors.length; 
-  changeInterfaceColors(colors[currentIndex]);
-
-  const currentColorSet = colors[currentIndex];
-  updatePrice(currentColorSet.price);
-  updateTitle(currentColorSet.title);
-  updateDescription(currentColorSet.description);
+  currentIndex = (currentIndex + 1) % dishesPlatos.length; 
+  updateDishDetails(dishesPlatos[currentIndex]);
 });
 
 prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + colors.length) % colors.length; 
-  changeInterfaceColors(colors[currentIndex]);
-
-
-  const currentColorSet = colors[currentIndex];
-  updatePrice(currentColorSet.price);
-  updateTitle(currentColorSet.title);
-  updateDescription(currentColorSet.description);
+  currentIndex = (currentIndex - 1 + dishesPlatos.length) % dishesPlatos.length; 
+  updateDishDetails(dishesPlatos[currentIndex]);
 });
-
 
 function updatePrice(newPrice) {
   price.textContent = `$${newPrice}`;
@@ -287,6 +201,9 @@ function updateTitle(newTitle) {
 function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
+
+
+
 
 class Dishes extends HTMLElement {
   constructor() {
@@ -312,7 +229,7 @@ class platos extends HTMLElement {
     const description = this.getAttribute("description");
     const html = `
       <div class="carousel-food-spin__dot">
-   <a href="#" class="js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
+        <a href="#" class="js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
           <img class="carousel-food-spin__item-img" src="image/${image}" alt="${image}">
         </a>
       </div>
@@ -353,8 +270,4 @@ function updateDescription(newDescription) {
   const descriptionElement = document.querySelector('.js-food-spin-description');
   descriptionElement.textContent = newDescription;
 }
-
-
-
-
 

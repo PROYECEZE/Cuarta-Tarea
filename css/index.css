@@ -27,6 +27,7 @@ body {
 .food-spin__logo{
   margin-top: 5px;
 }
+
 .food-spin__menu {
   display: flex;
   list-style-type: none;
@@ -51,6 +52,7 @@ body {
 }
 
 .food-spin__submenu {
+  display: none;
   position: absolute;
   list-style: none;
   padding: 0;
@@ -59,12 +61,8 @@ body {
   border-radius: 5px;
   --hover-color: #ff6600;
   box-shadow: 0px 2px 8px 0px var(--hover-color);
-  padding-right: 40px;
+  width: 200px; 
   z-index: 10; 
-}
-
-.food-spin__submenu:hover {
-  display: flex;
 }
 
 .food-spin__submenu-li {
@@ -76,6 +74,11 @@ body {
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease;
 }
+
+.food-spin__items:hover .food-spin__submenu {
+  display: flex;
+}
+
 
 .food-spin__submenu-li:hover {
   --hover-color: #ff6600;
