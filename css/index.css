@@ -59,11 +59,11 @@ body {
   border-radius: 5px;
   --hover-color: #ff6600;
   box-shadow: 0px 2px 8px 0px var(--hover-color);
-  width: 200px; 
+  padding-right: 40px;
   z-index: 10; 
 }
 
-.food-spin__item:hover .food-spin__submenu {
+.food-spin__submenu:hover {
   display: flex;
 }
 
