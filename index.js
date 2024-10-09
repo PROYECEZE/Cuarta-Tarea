@@ -225,7 +225,7 @@ class Dishes extends HTMLElement {
   }
 }
 
-class platos extends HTMLElement {
+class Platos extends HTMLElement {
   constructor() {
     super();
     const price = this.getAttribute('price');
@@ -244,7 +244,7 @@ class platos extends HTMLElement {
 }
 
 customElements.define('dishe-element', Dishes);
-customElements.define('dishe-plato', platos);
+customElements.define('dishe-plato', Platos);
 
 
 document.querySelectorAll('.js-dish-link').forEach(link => {
