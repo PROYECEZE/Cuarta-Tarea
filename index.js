@@ -9,16 +9,16 @@ function initCarousel(options) {
   CustomCarousel.prototype.init = function (options) {
     this.node = options.node;
     this.node.slider = this;
-    this.slides = this.node.querySelector(".js-carousel-food-spin-dishs").children;
+    this.slides = this.node.querySelector('.js-carousel-food-spin-dishs').children;
     this.slidesN = this.slides.length;
-    this.pagination = this.node.querySelector(".js-carousel-food-spin-pagination");
+    this.pagination = this.node.querySelector('.js-carousel-food-spin-pagination');
     this.pagTransf = "translate( -50%, -50% )";
     this.dots = this.pagination.children;
     this.dotsN = this.dots.length;
     this.step = -360 / this.dotsN;
     this.angle = 0;
-    this.next = this.node.querySelector(".js-next");
-    this.prev = this.node.querySelector(".js-prev");
+    this.next = this.node.querySelector('.js-next');
+    this.prev = this.node.querySelector('.js-prev');
     this.activeN = options.activeN || 0;
     this.prevN = this.activeN;
     this.speed = options.speed || 800;
@@ -115,7 +115,7 @@ function initCarousel(options) {
 }
 
 var plugins = {
-  customCarousel: document.querySelectorAll(".js-carousel-food-spin")
+  customCarousel: document.querySelectorAll('.js-carousel-food-spin')
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < plugins.customCarousel.length; i++) {
       var carousel = initCarousel({
         node: plugins.customCarousel[i],
-        speed: plugins.customCarousel[i].getAttribute("data-speed"),
+        speed: plugins.customCarousel[i].getAttribute('data-speed'),
       });
     }
   }
@@ -154,12 +154,15 @@ function changeInterfaceColors(dishInfo) {
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
   price.style.setProperty('--bg-orange', colorSet.buttonColor);
+
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
   prevBtn.style.setProperty('--hover-color', colorSet.hoverColor);
+
   nextBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   nextBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
   nextBtn.style.setProperty('--hover-color', colorSet.hoverColor);
+
   button.style.setProperty('--bg-orange', colorSet.buttonColor);
   button.style.setProperty('--shadow-bg', colorSet.shadowColor);
   button.style.setProperty('--hover-color', colorSet.hoverColor);
@@ -207,13 +210,27 @@ function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
-
-
+class submenu extends HTMLElement {
+  constructor() {
+    super();
+    const item1= this.getAttribute('item1');
+    const item2 = this.getAttribute('item2');
+    const item3 = this.getAttribute('item3');
+    const item4 = this.getAttribute('item4');
+    const html = `
+      <li><a href="#" class="food-spin__submenu-li" aria-label="see Eggs">${item1}</a></li>
+      <li><a href="#" class="food-spin__submenu-li" aria-label="see Pancakes">${item2}</a></li>
+      <li><a href="#" class="food-spin__submenu-li" aria-label="see Omelette">${item3}</a></li>
+      <li><a href="#" class="food-spin__submenu-li" aria-label="see Breakfast Burrito">${item4}</a></li>
+    `;
+    this.insertAdjacentHTML('beforeend', html);
+  }
+}
 
 class Dishes extends HTMLElement {
   constructor() {
     super();
-    const image = this.getAttribute("image");
+    const image = this.getAttribute('image');
     const html = `
       <div class="carousel-food-spin__main js-carousel-food-spin-dish">
         <a href="#" aria-label="click to see the selected dish">
@@ -221,17 +238,17 @@ class Dishes extends HTMLElement {
         </a>
       </div>
     `;
-    this.insertAdjacentHTML("beforeend", html);
+    this.insertAdjacentHTML('beforeend', html);
   }
 }
 
 class platos extends HTMLElement {
   constructor() {
     super();
-    const price = this.getAttribute("price");
-    const image = this.getAttribute("image");
-    const title = this.getAttribute("title");
-    const description = this.getAttribute("description");
+    const price = this.getAttribute('price');
+    const image = this.getAttribute('image');
+    const title = this.getAttribute('title');
+    const description = this.getAttribute('description');
     const html = `
       <div class="carousel-food-spin__dot">
         <a href="#" class="js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
@@ -239,12 +256,13 @@ class platos extends HTMLElement {
         </a>
       </div>
     `;
-    this.insertAdjacentHTML("beforeend", html);
+    this.insertAdjacentHTML('beforeend', html);
   }
 }
 
-customElements.define("dishe-element", Dishes);
-customElements.define("dishe-plato", platos);
+customElements.define('dishe-element', Dishes);
+customElements.define('dishe-plato', platos);
+customElements.define('submenu-items', submenu);
 
 
 document.querySelectorAll('.js-dish-link').forEach(link => {
