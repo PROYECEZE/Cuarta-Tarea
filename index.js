@@ -210,23 +210,6 @@ function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
-class submenu extends HTMLElement {
-  constructor() {
-    super();
-    const item1= this.getAttribute('item1');
-    const item2 = this.getAttribute('item2');
-    const item3 = this.getAttribute('item3');
-    const item4 = this.getAttribute('item4');
-    const html = `
-      <li><a href="#" class="food-spin__submenu-li" aria-label="see Eggs">${item1}</a></li>
-      <li><a href="#" class="food-spin__submenu-li" aria-label="see Pancakes">${item2}</a></li>
-      <li><a href="#" class="food-spin__submenu-li" aria-label="see Omelette">${item3}</a></li>
-      <li><a href="#" class="food-spin__submenu-li" aria-label="see Breakfast Burrito">${item4}</a></li>
-    `;
-    this.insertAdjacentHTML('beforeend', html);
-  }
-}
-
 class Dishes extends HTMLElement {
   constructor() {
     super();
@@ -262,7 +245,6 @@ class platos extends HTMLElement {
 
 customElements.define('dishe-element', Dishes);
 customElements.define('dishe-plato', platos);
-customElements.define('submenu-items', submenu);
 
 
 document.querySelectorAll('.js-dish-link').forEach(link => {
@@ -293,4 +275,3 @@ function updateDescription(newDescription) {
   const descriptionElement = document.querySelector('.js-food-spin-description');
   descriptionElement.textContent = newDescription;
 }
-
