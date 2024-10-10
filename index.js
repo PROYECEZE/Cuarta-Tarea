@@ -215,11 +215,9 @@ class Dishes extends HTMLElement {
     super();
     const image = this.getAttribute('image');
     const html = `
-      <div class="carousel-food-spin__main js-carousel-food-spin-dish">
-        <a href="#" aria-label="click to see the selected dish">
-          <img class="carousel-food-spin__img" src="image/${image}" alt="dish ${image}">
-        </a>
-      </div>
+      <a class="carousel-food-spin__main js-carousel-food-spin-dish" href="#" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__img" src="image/${image}" alt="dish ${image}">
+      </a>
     `;
     this.insertAdjacentHTML('beforeend', html);
   }
@@ -233,11 +231,9 @@ class Platos extends HTMLElement {
     const title = this.getAttribute('title');
     const description = this.getAttribute('description');
     const html = `
-      <div class="carousel-food-spin__dot">
-        <a href="#" class="js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
-          <img class="carousel-food-spin__item-img" src="image/${image}" alt="${image}">
-        </a>
-      </div>
+      <a href="#" class="carousel-food-spin__dot js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__item-img" src="image/${image}" alt="${image}">
+      </a>
     `;
     this.insertAdjacentHTML('beforeend', html);
   }
