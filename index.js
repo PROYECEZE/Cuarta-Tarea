@@ -9,16 +9,16 @@ function initCarousel(options) {
   CustomCarousel.prototype.init = function (options) {
     this.node = options.node;
     this.node.slider = this;
-    this.slides = this.node.querySelector(".js-carousel-food-spin-dishs").children;
+    this.slides = this.node.querySelector('.js-carousel-food-spin-dishs').children;
     this.slidesN = this.slides.length;
-    this.pagination = this.node.querySelector(".js-carousel-food-spin-pagination");
+    this.pagination = this.node.querySelector('.js-carousel-food-spin-pagination');
     this.pagTransf = "translate( -50%, -50% )";
     this.dots = this.pagination.children;
     this.dotsN = this.dots.length;
     this.step = -360 / this.dotsN;
     this.angle = 0;
-    this.next = this.node.querySelector(".js-next");
-    this.prev = this.node.querySelector(".js-prev");
+    this.next = this.node.querySelector('.js-next');
+    this.prev = this.node.querySelector('.js-prev');
     this.activeN = options.activeN || 0;
     this.prevN = this.activeN;
     this.speed = options.speed || 800;
@@ -115,7 +115,7 @@ function initCarousel(options) {
 }
 
 var plugins = {
-  customCarousel: document.querySelectorAll(".js-carousel-food-spin")
+  customCarousel: document.querySelectorAll('.js-carousel-food-spin')
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -123,13 +123,12 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < plugins.customCarousel.length; i++) {
       var carousel = initCarousel({
         node: plugins.customCarousel[i],
-        speed: plugins.customCarousel[i].getAttribute("data-speed"),
+        speed: plugins.customCarousel[i].getAttribute('data-speed'),
       });
     }
   }
 });
 
-//color change//
 const prevBtn = document.querySelector('.js-prev');
 const nextBtn = document.querySelector('.js-next');
 const ellipse = document.querySelector('.js-food-spin-ellipse');
@@ -137,9 +136,67 @@ const button = document.querySelector('.js-food-spin-order-button');
 const price = document.querySelector('.js-food-spin-price');
 const title = document.querySelector('.js-food-spin-title');
 const description = document.querySelector('.js-food-spin-description');
-const items = [...document.querySelectorAll('.js-food-spin-item')];
+const pagination = document.querySelector('.js-carousel-food-spin-pagination');
+const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
+const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
+const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 
-let currentPrice = 32;
+let currentIndex = 0;
+
+function changeInterfaceColors(dishInfo) {
+  const colorSet = {
+    ellipseColor: dishInfo.getAttribute('ellipseColor'),
+    shadowColor: dishInfo.getAttribute('shadowColor'),
+    buttonColor: dishInfo.getAttribute('buttonColor'),
+    hoverColor: dishInfo.getAttribute('hoverColor'),
+  };
+
+  ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
+  pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
+  price.style.setProperty('--bg-orange', colorSet.buttonColor);
+
+  prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
+  prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
+  prevBtn.style.setProperty('--hover-color', colorSet.hoverColor);
+
+  nextBtn.style.setProperty('--bg-color', colorSet.buttonColor);
+  nextBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
+  nextBtn.style.setProperty('--hover-color', colorSet.hoverColor);
+
+  button.style.setProperty('--bg-orange', colorSet.buttonColor);
+  button.style.setProperty('--shadow-bg', colorSet.shadowColor);
+  button.style.setProperty('--hover-color', colorSet.hoverColor);
+
+  menuItems.forEach(item => {
+    item.style.setProperty('--hover-color', colorSet.hoverColor);
+  });
+
+  ItenSubmenu.forEach(submenu => {
+    submenu.style.setProperty('--hover-color', colorSet.hoverColor);
+  });
+
+  price.style.color = colorSet.buttonColor;
+}
+
+function updateDishDetails(currentDish) {
+  const dishInfo = currentDish.querySelector('dishe-plato');
+  changeInterfaceColors(dishInfo);
+  updatePrice(dishInfo.getAttribute('price'));
+  updateTitle(dishInfo.getAttribute('title'));
+  updateDescription(dishInfo.getAttribute('description'));
+}
+
+
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % dishesPlatos.length; 
+  updateDishDetails(dishesPlatos[currentIndex]);
+});
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + dishesPlatos.length) % dishesPlatos.length; 
+  updateDishDetails(dishesPlatos[currentIndex]);
+});
 
 function updatePrice(newPrice) {
   price.textContent = `$${newPrice}`;
@@ -153,39 +210,111 @@ function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
-function changeInterfaceColors(buttonColor, shadowColor, ellipseColor, hoverColor) {
-  ellipse.style.setProperty('--bg-color', ellipseColor);
-  prevBtn.style.setProperty('--bg-color', buttonColor);
-  prevBtn.style.setProperty('--shadow-bg', shadowColor);
-  prevBtn.style.setProperty('--hover-color', hoverColor);
-  nextBtn.style.setProperty('--bg-color', buttonColor);
-  nextBtn.style.setProperty('--shadow-bg', shadowColor);
-  nextBtn.style.setProperty('--hover-color', hoverColor);
-  button.style.setProperty('--bg-orange', buttonColor);
-  button.style.setProperty('--shadow-bg', shadowColor);
-  button.style.setProperty('--hover-color', hoverColor);
-
-  items.forEach(item => {
-    item.style.setProperty('--hover-color', hoverColor);
-  });
-
-  price.style.color = buttonColor;
+class Dishes extends HTMLElement {
+  constructor() {
+    super();
+    const image = this.getAttribute('image');
+    const html = `
+      <a class="carousel-food-spin__main js-carousel-food-spin-dish" href="#" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__img" src="image/${image}" alt="dish ${image}">
+      </a>
+    `;
+    this.insertAdjacentHTML('beforeend', html);
+  }
 }
 
-nextBtn.addEventListener('click', () => {
-  changeInterfaceColors('#FF922C', '#F4E2D1', '#FFEEDE', '#ff6600');
+class Platos extends HTMLElement {
+  constructor() {
+    super();
+    const price = this.getAttribute('price');
+    const image = this.getAttribute('image');
+    const title = this.getAttribute('title');
+    const description = this.getAttribute('description');
+    const html = `
+      <a href="#" class="carousel-food-spin__dot js-dish-link" price="${price}" title="${title}" description="${description}" aria-label="click to see the selected dish">
+        <img class="carousel-food-spin__item-img" src="image/${image}" alt="${image}">
+      </a>
+    `;
+    this.insertAdjacentHTML('beforeend', html);
+  }
+}
 
-  updatePrice(32);
-  updateTitle('Green Goddess Chicken Salad');
-  updateDescription('It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.');
-  description.style.paddingRight = '150px';
+customElements.define('dishe-element', Dishes);
+customElements.define('dishe-plato', Platos);
+
+
+document.querySelectorAll('.js-dish-link').forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); 
+
+    const newPrice = this.getAttribute('price');
+    const newTitle = this.getAttribute('title');
+    const newDescription = this.getAttribute('description');
+
+    updatePrice(newPrice);
+    updateTitle(newTitle);
+    updateDescription(newDescription);
+  });
 });
 
-prevBtn.addEventListener('click', () => {
-  changeInterfaceColors('#54BF29', '#DBF4D1', '#EAFFE2', '#3F8F1F');
+function updatePrice(newPrice) {
+  const priceElement = document.querySelector('.js-food-spin-price');
+  priceElement.textContent = `$${newPrice}`;
+}
 
-  updatePrice(35);
-  updateTitle('Asian Cucumber Salad');
-  updateDescription('Asian Cucumber Salad Recipe made with crunchy cucumber, onion, rice wine vinegar, and a few secret ingredients!');
-  description.style.paddingRight = '200px';
+function updateTitle(newTitle) {
+  const titleElement = document.querySelector('.js-food-spin-title');
+  titleElement.textContent = newTitle;
+}
+
+function updateDescription(newDescription) {
+  const descriptionElement = document.querySelector('.js-food-spin-description');
+  descriptionElement.textContent = newDescription;
+}
+
+
+const decreaseBtn = document.querySelector('.js-ventana-modal-decrease');
+const increaseBtn = document.querySelector('.js-ventana-modal-increase');
+const quantityInput = document.querySelector('.js-ventana-modal-quantity');
+
+// Initialize input
+let initialQuantity = null;
+// Function to decrease the quantity
+decreaseBtn.addEventListener('click', () => {
+  if (initialQuantity === null) {
+    initialQuantity = 1;
+  }
+
+  let currentValue = parseInt(quantityInput.value || initialQuantity);
+  if (currentValue > 1) {
+    quantityInput.value = currentValue - 1;
+  } else {
+    quantityInput.value = "---";
+    initialQuantity = null;
+  }
+});
+
+// Function to increase the quantity
+increaseBtn.addEventListener('click', () => {
+  if (initialQuantity === null) {
+    initialQuantity = 1;
+    quantityInput.value = initialQuantity;
+  } else {
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+  }
+});
+
+const openModalButton = document.querySelector('.js-food-spin-order-button');
+const closeModalButton = document.querySelector('.js-ventana-modal-button');
+const modal = document.querySelector('.js-ventana-Modal');
+
+
+openModalButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+
+closeModalButton.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
