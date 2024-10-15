@@ -5,7 +5,7 @@ body {
   margin: 0px;
 }
 
-.food-spin{
+.food-spin {
   max-width: 1080px;
   margin: 0 auto;
 }
@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-.food-spin__logo{
+.food-spin__logo {
   margin-top: 5px;
 }
 
@@ -91,7 +91,7 @@ body {
   outline-offset: 2px;
 }
 
-.food-spin__info{
+.food-spin__info {
   display: flex;
   max-width: 1080px;
   margin: 0 auto;
@@ -170,7 +170,7 @@ body {
   background-color: var(--hover-color);
 }
 
-.food-spin__video{
+.food-spin__video {
   font-size: var(--font-size-smalln);
   font-weight: var(--font-weight);
   line-height: var(--twenty-pixel);
@@ -225,7 +225,7 @@ body {
   opacity: 1;
 }
 
-.carousel-food-spin__snip{
+.carousel-food-spin__snip {
   clip-path: circle(149% at 0% -148%);
   z-index: 3;
   position: absolute;
@@ -235,7 +235,7 @@ body {
   height: 100%;
 }
 
-.carousel-food-spin__pagination{
+.carousel-food-spin__pagination {
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -250,7 +250,7 @@ body {
   margin: 0px;
 }
 
-.carousel-food-spin__item{
+.carousel-food-spin__item {
   position: absolute;
   top: 0;
   left: 0;
@@ -272,14 +272,14 @@ body {
   transition: 0.2s;
 }
 
-.carousel-food-spin__prev-next{
+.carousel-food-spin__prev-next {
   display: flex;
   justify-content: space-between;
   margin-top: -130px;
 }
 
 .carousel-food-spin__next,
-.carousel-food-spin__prev{
+.carousel-food-spin__prev {
   display: flex;
   align-items: center;
   z-index: 1;
@@ -297,7 +297,7 @@ body {
 }
 
 .carousel-food-spin__next:hover,
-.carousel-food-spin__prev:hover{
+.carousel-food-spin__prev:hover {
   --hover-color: #ff6600;
   background-color: var(--hover-color);
 }
@@ -326,5 +326,252 @@ body {
 .carousel-food-spin__item-img {
   max-width: 100px;
 }
+
+.ventana-modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ventana-modal__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px rgba(255, 146, 44, 0.5);
+  border-radius: 50px;
+  margin-top: 150px;
+  max-width: 975px;
+  gap: 28px;
+}
+
+.ventana-modal__img {
+  width: 431px;
+  margin-right: -20px;
+  filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.5));
+}
+
+.ventana-modal__bord {
+  height: 610px;
+  border: 1px solid #FF922C;
+}
+
+.ventana-modal__button {
+  margin-bottom: auto;
+  background: #FF922C;
+  box-shadow: 0px 0px 10px rgba(255, 146, 44, 0.7);
+  border: none;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 50%;
+  margin-top: -20px;
+  margin-right: -20px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.ventana-modal__info {
+  position: relative;
+  padding-top: 49px;
+  margin-bottom: 49px;
+}
+
+.ventana-modal__title {
+  padding-right: 42px;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 70px;
+  letter-spacing: 0.02em;
+  color: #FF922C;
+}
+
+.ventana-modal__Discount {
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #404040;
+  margin-left: 0px;
+}
+
+.ventana-modal__svg {
+  margin-bottom: -10px;
+  margin-right: 5px;
+}
+
+.ventana-modal__paragraph {
+  padding-top: 30px;
+  padding-right: 44px;
+  margin-left: 0px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  color: #7A7373;
+}
+
+.ventana-modal__price {
+  display: flex;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: -0.01em;
+  color: #FF922C;
+  align-items: center;
+  gap: 12px;
+  margin: 0px;
+  padding-top: 24px;
+}
+
+.ventana-modal__number {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+  color: #A6A6A6;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.ventana-modal__add {
+  display: flex;
+  margin-top: 30px;
+}
+
+.ventana-modal__quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-solid);
+  width: 180px;
+  border-radius: 8px;
+  justify-content: center;
+  gap: 5px;
+  position: absolute;
+  background-color: white;
+  height: 40px;
+}
+
+.ventana-modal__decrease {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--color-solid);
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+.ventana-modal__quantity {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  width: 64px;
+  padding: 7px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1.5px solid var(--color-solid);
+  border-right: 1.5px solid var(--color-solid);
+  color: var(--color-solid);
+  background-color: #f5f5f5;
+  border-bottom: none;
+  border-top: none;
+}
+
+.ventana-modal__increase {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-solid);
+  font-size: 40px;
+  margin-right: 15px;
+}
+
+.ventana-modal__requires {
+  margin-left: 210px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  color: #7A7373;
+  margin-top: -16px;
+}
+
+.ventana-modal__input {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid #A6A6A6;
+  align-items: center;
+  display: flex;
+}
+
+.ventana-modal__svgs {
+  background-color: #FFFFFF;
+  border-right: 1px solid #A6A6A6;
+  border-radius: 8px 0px 0px 8px;
+  padding: 4px;
+}
+
+.ventana-modal__bevegare {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: #FF922C;
+  background: #F5F5F5;
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 4px 10px;
+}
+
+.ventana-modal__add-target {
+  display: flex;
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.ventana-page__add-purchases {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 49px;
+  background: #FF922C;
+  box-shadow: 0px 0px 2px rgba(255, 146, 44, 0.7);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.ventana-page__add-purchases:hover {
+  background-color: #ff6600;
+}
+
+.ventana-modal__add-cart {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.10em;
+  color: #FFFFFF;
+}
+
+.ventana-modal__payment-methods {
+  display: flex;
+  height: 12px;
+  gap: 5px;
+  margin-top: 13px;
+  list-style-type: none;
+  padding-left: 0px;
+  margin-right: 10px;
+  justify-content: end;
+}
+
 
 

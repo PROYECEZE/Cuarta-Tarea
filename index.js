@@ -271,3 +271,50 @@ function updateDescription(newDescription) {
   const descriptionElement = document.querySelector('.js-food-spin-description');
   descriptionElement.textContent = newDescription;
 }
+
+
+const decreaseBtn = document.querySelector('.js-ventana-modal-decrease');
+const increaseBtn = document.querySelector('.js-ventana-modal-increase');
+const quantityInput = document.querySelector('.js-ventana-modal-quantity');
+
+// Initialize input
+let initialQuantity = null;
+// Function to decrease the quantity
+decreaseBtn.addEventListener('click', () => {
+  if (initialQuantity === null) {
+    initialQuantity = 1;
+  }
+
+  let currentValue = parseInt(quantityInput.value || initialQuantity);
+  if (currentValue > 1) {
+    quantityInput.value = currentValue - 1;
+  } else {
+    quantityInput.value = "---";
+    initialQuantity = null;
+  }
+});
+
+// Function to increase the quantity
+increaseBtn.addEventListener('click', () => {
+  if (initialQuantity === null) {
+    initialQuantity = 1;
+    quantityInput.value = initialQuantity;
+  } else {
+    let currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+  }
+});
+
+const openModalButton = document.querySelector('.js-food-spin-order-button');
+const closeModalButton = document.querySelector('.js-ventana-modal-button');
+const modal = document.querySelector('.js-ventana-Modal');
+
+
+openModalButton.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+
+closeModalButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
