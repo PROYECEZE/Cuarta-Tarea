@@ -17,14 +17,32 @@
         </a>
         <nav>
           <ul class="food-spin__menu">
-            <li>
+            <li class="food-spin__items">
               <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Breakfast">Breakfast</a>
+              <ul class="food-spin__submenu js-food-spin-submenu">
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Eggs">Eggs</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Pancakes">Pancakes</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Omelette">Omelette</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Breakfast Burrito">Breakfast Burrito</a></li>
+              </ul>
             </li>
-            <li>
+            <li class="food-spin__items">
               <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Lunch">Lunch</a>
+              <ul class="food-spin__submenu js-food-spin-submenu">
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Lemon Fish">Lemon Fish</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Grilled Turkey">Grilled Turkey</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see Tuna Burrito">Tuna Burrito</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see chicken au gratin">chicken au gratin</a></li>
+              </ul>
             </li>
-            <li>
-              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see  Dinner">Dinner</a>
+            <li class="food-spin__items">
+              <a href="#" class="food-spin__item js-food-spin-item" aria-label="see Dinner">Dinner</a>
+              <ul class="food-spin__submenu js-food-spin-submenu">
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see sautéed breast">sautéed breast</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see seafood salad">seafood salad</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see shrimp with pasta">shrimp with pasta</a></li>
+                <li><a href="#" class="food-spin__submenu-li" aria-label="see mashed potatoes">mashed potatoes</a></li>
+              </ul>
             </li>
           </ul>
         </nav>
@@ -59,150 +77,167 @@
       <div class="food-spin__rigth">
         <div class="slide-food-spin">
           <div class="carousel-food-spin js-carousel-food-spin" data-speed="800">
-            <ul class="carousel-food-spin__dishs js-carousel-food-spin-dishs" aria-label="available menus">
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food1.png" alt="dish salad">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food2.png" alt="dish special">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food3.png" alt="dish main">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food4.png" alt="dish salty">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food5.png" alt="dish Mexican">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food1.png" alt="dish salad">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food2.png" alt="dish special">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food3.png" alt="dish main">
-                  </a>
-                </div>
-              </li>
-              <li class="carousel-food-spin__dish">
-                <div class="carousel-food-spin__main js-carousel-foord-spin-dish">
-                  <a href="" aria-label="click to see the selected dish">
-                    <img class="carousel-food-spin__img" src="image/food4.png" alt="dish salty">
-                  </a>
-                </div>
-              </li>
-            </ul>
+            <div class="carousel-food-spin__dishs js-carousel-food-spin-dishs" aria-label="available menus">
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food3.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food2.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food5.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food4.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food3.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food2.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food5.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food1.png"></dishe-element>
+              </div>
+              <div class="carousel-food-spin__dish">
+                <dishe-element image="food4.png"></dishe-element>
+              </div>
+            </div>
             <div class="carousel-food-spin__snip">
-              <ul class="carousel-food-spin__pagination js-carousel-food-spin-pagination" aria-label="girator of dishes">
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 1">
-                      <img class="carousel-food-spin__item-img" src="image/food1.png" alt="dish 1">
-                    </a>
-                  </div>
+              <ul class="carousel-food-spin__pagination js-carousel-food-spin-pagination" aria-label="carousel of dishes">
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food3.png" price="32" title="Green Goddess Chicken Salad" description="A Non-Vegetarian salad with Green Goddess dressing, chicken, peppers, olives, and celery." ellipseColor="#FFEEDE" shadowColor= "#F4E2D1" buttonColor="#FF922C" hoverColor="#ff6600"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 2">
-                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 2">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food2.png" price="29" title="Agnolotti Pasta Salad With Ricotta" description="A simple pasta salad with delicious ricotta for an easy weeknight meal!" ellipseColor="#EAFFE2" shadowColor= "#DBF4D1" buttonColor="#54BF29" hoverColor="#3F8F1F"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 3">
-                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 3">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food5.png" price="70" title="Grilled Salmon Salad" description="Salmon Greek Salad with Lemon Basil Dressing - a light and healthy recipe that tastes amazing!" ellipseColor="#efd5f0" shadowColor= "#ebb9ee" buttonColor="#c651cf" hoverColor="#6c0673"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 4">
-                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food4.png" price="40" title="Asian Cucumber Salad" description="Made with crunchy cucumber, onion, rice wine vinegar, and secret ingredients!" ellipseColor="#def5f9" shadowColor= "#b7ebf6" buttonColor="#18c6e9" hoverColor="#005363"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 5">
-                      <img class="carousel-food-spin__item-img" src="image/food5.png" alt="dish 5">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food3.png" price="100" title="Autumn Cobb Salad" description="Roasted squash, crunchy apples, and dried cherries dressed in spiced apple cider vinaigrette." ellipseColor="#f5d9d9" shadowColor= "#fca1a1" buttonColor="#e40000" hoverColor="#880000"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 1">
-                      <img class="carousel-food-spin__item-img" src="image/food1.png" alt="dish 1">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food2.png" price="24" title="Creamy Lemon Basil & Zucchini Pasta" description="Delicious creamy pasta with lemon basil and zucchini." ellipseColor="#f5f5d9" shadowColor= "#ddddb0" buttonColor="#c8c803" hoverColor="#676702"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 2">
-                      <img class="carousel-food-spin__item-img" src="image/food2.png" alt="dish 2">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food5.png" price="90" title="Salmon Salad" description="Incredibly nutritious salmon salad atop a bed of fresh greens." ellipseColor="#dcdaeb" shadowColor= "#9c99ca" buttonColor="#7771c4" hoverColor="#352f95"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 3">
-                      <img class="carousel-food-spin__item-img" src="image/food3.png" alt="dish 3">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food1.png" price="66" title="A Healthful Winter Salad" description="A mix of winter vegetables and fruits, beets, citrus, and roasted nuts!" ellipseColor="#e8f4ee" shadowColor= "#c4e6d7" buttonColor="#4fd299" hoverColor="#019a57"></dishe-plato>
                 </li>
-                <li class="carousel-food-spin__item">
-                  <div class="carousel-food-spin__dot">
-                    <a href="" aria-label="click to see the menus of dish 4">
-                      <img class="carousel-food-spin__item-img" src="image/food4.png" alt="dish 4">
-                    </a>
-                  </div>
+                <li class="carousel-food-spin__item js-carousel-food-spin-items">
+                  <dishe-plato image="food4.png" price="50" title="Shrimp, Cucumber and Avocado Salad" description="Healthy, vegetarian, protein-rich, easy to make, and affordable." ellipseColor="#9ca3ff" shadowColor= "#b6b2f3" buttonColor="#4a4dff" hoverColor="#04067b"></dishe-plato>
                 </li>
               </ul>
             </div>
-            <button class="carousel-food-spin__prev js-prev" aria-label="see plates on the right">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7.00574 1.00001L0.999699 6.99396M7.00574 1.00001L12.9997 7.00605M7.00574 1.00001L6.99365 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
-            <button class="carousel-food-spin__next js-next" aria-label="see plates on the left">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7 13L13 7M7 13L1 7M7 13V1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
+            <div class="carousel-food-spin__prev-next">
+              <button class="carousel-food-spin__prev js-prev" aria-label="see plates on the right">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7.00574 1.00001L0.999699 6.99396M7.00574 1.00001L12.9997 7.00605M7.00574 1.00001L6.99365 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <button class="carousel-food-spin__next js-next" aria-label="see plates on the left">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 13L13 7M7 13L1 7M7 13V1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="ventana-modal js-ventana-Modal"> 
+      <div class="ventana-modal__content js-ventana-modal-content">
+          <img class="ventana-modal__img js-ventana-modal-img" src="image/food3.png" alt="">
+          <div class="ventana-modal__bord"></div>
+          <div class="ventana-modal__info">
+          <dl>
+            <dt class="ventana-modal__title js-ventana-modal-title">Green Goddess Chicken Salad</dt>
+            <dd class="ventana-modal__Discount">
+              <svg class="ventana-modal__svg" width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="21" height="30" fill="url(#pattern0_19_109)" />
+                <defs>
+                  <pattern id="pattern0_19_109" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_19_109" transform="matrix(0.0111111 0 0 0.00777778 0 0.15)" />
+                  </pattern>
+                  <image id="image0_19_109" width="90" height="90" xlink:href="data:image/png;base64,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" />
+                </defs>
+              </svg> Discount does not apply on additional cost ingredients.
+            </dd>
+            <dd class="ventana-modal__paragraph js-ventana-modal-paragraph">It Is A Non Vegetarian Salad Which Consists Of The Green Goddess Dressing Mixed With Chicken, Peppers, Olives And Celery.</dd>
+          </dl>
+          <p class="ventana-modal__price js-ventana-modal-price" aria-label="price the dish $59.99">$32.99 <s class="ventana-modal__number js-ventana-modal-number" aria-label="previous price $89.99">$69.99</s>
+          </p>
+          <div class="ventana-modal__add">
+            <div class="ventana-modal__quantity-selector" aria-label="Selector de cantidad de productos">
+              <button class="ventana-modal__decrease js-ventana-modal-decrease" aria-label="Disminuir cantidad">—</button>
+              <input type="text" class="ventana-modal__quantity js-ventana-modal-quantity" aria-label="Cantidad seleccionada" placeholder="---">
+              <button class="ventana-modal__increase js-ventana-modal-increase" aria-label="Aumentar cantidad">+</button>
+            </div>
+            <div class="ventana-modal__requires">
+              <label class="ventana-modal__penalties">Beverage-Additional </label>
+              <div class="ventana-modal__input">
+                <svg class="ventana-modal__svgs" width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect width="26" height="21" fill="url(#pattern0_19_111)" />
+                  <defs>
+                    <pattern id="pattern0_19_111" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_19_111" transform="matrix(0.00897436 0 0 0.0111111 0.0961538 0)" />
+                    </pattern>
+                    <image id="image0_19_111" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEPklEQVR4nO2cTYgcRRTHKzERNfiB4geKXxBJtt+bWXUQghHWk4iiIBLwEL3oIWhA0YMEjOPHwaxh2X7VqzIg5iAixIvBi3rQg4KSgAgqeBADxiSKGmRj1DUmf6lZQZR0TbLOVFXXvB+829b2e//5U11d/aqNURRFURRFURRFURRFUZQQYGbyMljeDGk9PlZhebOrPYzIZXETLM/DMsY05mFp/eiFFtqTQLGIHLsDCM2/JVAooobQkdELbfnj6IXa2EEfBRCa1sPyQvxiOVYsQOjGkQvdF1voXggfr01G+CAsbWtkiMu9tq7jrvYgIv8jNj/p/eUretg0DAg9MsDNW2MltsOT1DGUfJdpCLB8O4T+rHczvQaYZXGS63VWQuhdz03jV0hrnUkcSKsDS794poz30S1Oj5zk6nMg/KnH2T9grlhtEgWzk1fB0nee/L/A7OR5Jp1HctrnvTm+QJfXjpeJ67yOihcHUBZXmJRA1WpB6GdP0p9ge3tV/Xi627uSCR3Ch50BTIqg5Ntg6aingDd8NxRYejq6wP2go64WkzIQesDvFHqmdizMMlh+PbrQUjxkmgCEp72FVLypduzMujPdpk1EN28zTaHvTKFXPa7+A0K31I6v1lwKS9+GdzLtRNcsN03CrTth+b0B+7qT3rWt0JGAQn+AHVeeYZoIqrUXwNKX9Q7i/d5lX9XaEGgl8hXk2gtNk4FtXw2h7z1z4mfodc6tHS/87GinC/4R5cQ1JgdQ0g3eaUD4bXSnVgRfibiXGKG2PEMBoTv8mzb8cuCVyDH3kGRyBJYfG+CwLQNWIvuG6OZHTc7Akl3qxjqq1vXDWYlQz+QOdm44DcK7PEL8DuGp2vGL/RX/x8m7XA5mHMD29ipv24LQIVheWz+FLFVk2uPb2MoSzBWXwNJejyhfo+SLhyc07XXXNOMIpCj+dm+dQLvR65z17zG8ZQlOPuSuZcYZVHSzv32B3sSL7YswU5y/+PLUuw17olhw14hdZxKgpHtG8qjd/590X+z6kgKWtw5daEtPxK4rSSD00vDcTK/EridZ4NoXLL8zhCkjfntA6mB6zdkD2hcGifx5Mu0BqQO3Vhb+Jov2gNRB2eYB7Qv/jflk2wNSB1LcelLrZrf9WhV3xs630cDS/SexjHswdp5ZgH7vcq2bn4udXzZg8XXWiYWO1UqbK6gROnZe2QEVWoXOCqijVeisgDpahc4KqKNV6KyAOlqFzgqoo1XorIA6WoXOCqijVeisgDpahW486JrlmKUJWN7oeQu+sf83TTtaHL9Didwxuacg/BYs/3QKrWCHIfwhhMS16mJugsbmrMrIRLUqvl/c7tQKCD8/4DjFaKN/zIKn607qZgGcyLEEbvJ3OU4V+L/GFToOmFxBSkILHzS5Ap06An6VRtzN0POh1QBTRv9m2OusDFS2oiiKoiiKoiiKSZq/AN9Q7dJnkERVAAAAAElFTkSuQmCC" />
+                  </defs>
+                </svg>
+                <select class="ventana-modal__bevegare" aria-label="Selecciona tu respuesta">
+                  <option value="">Select A Beverage</option>
+                  <option value=""> without drink</option>
+                  <option value="">cocacola</option>
+                  <option value="">lemonade</option>
+                  <option value="">Maltiada</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="ventana-modal__add-target">
+            <button type="submit" class="ventana-page__add-purchases js-ventana-page-add-purchases" aria-label="agregar aire acondicionado al carrito">
+              <span class="ventana-modal__add-cart">ADD DISH</span>
+            </button>
+            <button type="submit" class="ventana-page__add-purchases js-ventana-page-add-purchases" aria-label="agregar aire acondicionado al carrito">
+              <span class="ventana-modal__add-cart">BUY NOW</span>
+            </button>
+          </div>
+          <ul class="ventana-modal__payment-methods" aria-label="medios de pagos">
+            <li>
+              <img src="image/payment-1.jpg" alt="por visa">
+            </li>
+            <li>
+              <img src="image/payment-2.jpg" alt="por Punto pago">
+            </li>
+            <li>
+              <img src="image/payment-3.jpg" alt="por yappy">
+            </li>
+            <img src="image/payment-4.jpg" alt="por nequi">
+            <li>
+              <img src="image/payment-5.jpg" alt="por mastercard">
+            </li>
+            <li>
+              <img src="image/payment-6.jpg" alt="por sistemaclave">
+            </li>
+            <li>
+              <img src="image/payment-7.jpg" alt="por ACH">
+            </li>
+          </ul>
+        </div>
+        <button class="ventana-modal__button js-ventana-modal-button">
+          <svg width="18" height="18" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 29L12.631 13.34L1.93862 0H4.59672L14.01 11.6879L23.4033 0H26.0614L15.369 13.34L28 29H25.262L14.01 15.0273L2.73804 29H0Z" fill="white" />
+          </svg>
+        </button>
       </div>
     </section>
   </main>
