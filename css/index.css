@@ -339,6 +339,7 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  --modal-color: var(--color-orange);
 }
 
 .ventana-modal__content {
@@ -347,7 +348,8 @@ body {
   align-items: center;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0px 0px 25px rgba(255, 146, 44, 0.5);
+  --modal-box: rgba(255, 146, 44, 0.5);
+  box-shadow: 0px 0px 25px var(--modal-box);
   border-radius: 50px;
   margin-top: 150px;
   max-width: 975px;
@@ -362,13 +364,14 @@ body {
 
 .ventana-modal__bord {
   height: 610px;
-  border: 1px solid #FF922C;
+  border: 1px solid var(--modal-color);
 }
 
 .ventana-modal__button {
   margin-bottom: auto;
-  background: #FF922C;
-  box-shadow: 0px 0px 10px rgba(255, 146, 44, 0.7);
+  background-color: var(--modal-color);
+  --modal-boxx: rgba(255, 146, 44, 0.7);
+  box-shadow: 0px 0px 10px var(--modal-boxx);
   border: none;
   color: #FFFFFF;
   padding: 8px;
@@ -386,12 +389,11 @@ body {
 }
 
 .ventana-modal__title {
-  padding-right: 42px;
   font-weight: 700;
   font-size: 54px;
   line-height: 70px;
   letter-spacing: 0.02em;
-  color: #FF922C;
+  color: var(--modal-color);
 }
 
 .ventana-modal__Discount {
@@ -424,7 +426,7 @@ body {
   font-size: 48px;
   line-height: 60px;
   letter-spacing: -0.01em;
-  color: #FF922C;
+  color: var(--modal-color);
   align-items: center;
   gap: 12px;
   margin: 0px;
@@ -545,15 +547,18 @@ body {
   justify-content: center;
   align-items: center;
   padding: 13px 49px;
-  background: #FF922C;
-  box-shadow: 0px 0px 2px rgba(255, 146, 44, 0.7);
+  --shadow-modal: var(--shadow-color);
+  background-color: var(--modal-color);
+  box-shadow: 0px 0px 2px var(--shadow-color);
   border-radius: 8px;
   border: none;
   cursor: pointer;
 }
 
 .ventana-page__add-purchases:hover {
-  background-color: #ff6600;
+  --hover-modal: #ff6600;
+  box-shadow: 0px 2px 8px 0px var(--hover-color);
+  background-color: var(--hover-modal);
 }
 
 .ventana-modal__add-cart {
@@ -574,6 +579,8 @@ body {
   margin-right: 10px;
   justify-content: end;
 }
+
+
 
 
 

@@ -140,6 +140,15 @@ const pagination = document.querySelector('.js-carousel-food-spin-pagination');
 const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
 const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
+const modalventana = document.querySelector('.js-ventana-Modal');
+const modaltitle = modalventana.querySelector('.js-ventana-modal-title');
+const modalparagraph = modalventana.querySelector('.js-ventana-modal-paragraph');
+const modalprice = modalventana.querySelector('.js-ventana-modal-price');
+const modalnumber = modalventana.querySelector('.js-ventana-modal-number');
+const modalbutton = modalventana.querySelector ('.js-ventana-page-add-purchases');
+const modalcontent = modalventana.querySelector ('.js-ventana-modal-content');
+const modalclose = modalventana.querySelector ('.js-ventana-modal-button');
+
 
 let currentIndex = 0;
 
@@ -150,6 +159,14 @@ function changeInterfaceColors(dishInfo) {
     buttonColor: dishInfo.getAttribute('buttonColor'),
     hoverColor: dishInfo.getAttribute('hoverColor'),
   };
+
+  modalventana.style.setProperty('--modal-color', colorSet.buttonColor);
+  modalprice.style.setProperty('--modal-color', colorSet.buttonColor);
+  modalbutton.style.setProperty('--modal-color', colorSet.buttonColor);
+  modalbutton.style.setProperty('--hover-modal', colorSet.hoverColor);
+  modalbutton.style.setProperty('--shadow-modal', colorSet.shadowColor);
+  modalcontent.style.setProperty('--modal-box', colorSet.shadowColor);
+  modalclose.style.setProperty('--modal-boxx', colorSet.shadowColor);
 
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
@@ -185,8 +202,6 @@ function updateDishDetails(currentDish) {
   updateTitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
 }
-
-
 
 nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % dishesPlatos.length; 
@@ -241,6 +256,7 @@ class Platos extends HTMLElement {
 
 customElements.define('dishe-element', Dishes);
 customElements.define('dishe-plato', Platos);
+
 
 
 document.querySelectorAll('.js-dish-link').forEach(link => {
@@ -318,3 +334,4 @@ openModalButton.addEventListener('click', () => {
 closeModalButton.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+
