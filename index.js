@@ -140,6 +140,7 @@ const pagination = document.querySelector('.js-carousel-food-spin-pagination');
 const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
 const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
+const colorsvg = document.querySelector('.js-food-spin-svg');
 const modalventana = document.querySelector('.js-ventana-Modal');
 const modaltitle = modalventana.querySelector('.js-ventana-modal-title');
 const modalparagraph = modalventana.querySelector('.js-ventana-modal-paragraph');
@@ -148,7 +149,7 @@ const modalnumber = modalventana.querySelector('.js-ventana-modal-number');
 const modalbutton = modalventana.querySelector ('.js-ventana-page-add-purchases');
 const modalcontent = modalventana.querySelector ('.js-ventana-modal-content');
 const modalclose = modalventana.querySelector ('.js-ventana-modal-button');
-
+const modalimg = modalventana.querySelector ('.js-ventana-modal-img');
 
 let currentIndex = 0;
 
@@ -161,8 +162,6 @@ function changeInterfaceColors(dishInfo) {
   };
 
   modalventana.style.setProperty('--modal-color', colorSet.buttonColor);
-  modalprice.style.setProperty('--modal-color', colorSet.buttonColor);
-  modalbutton.style.setProperty('--modal-color', colorSet.buttonColor);
   modalbutton.style.setProperty('--hover-modal', colorSet.hoverColor);
   modalbutton.style.setProperty('--shadow-modal', colorSet.shadowColor);
   modalcontent.style.setProperty('--modal-box', colorSet.shadowColor);
@@ -171,6 +170,7 @@ function changeInterfaceColors(dishInfo) {
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
   price.style.setProperty('--bg-orange', colorSet.buttonColor);
+  colorsvg.style.setProperty('--bg-orange', colorSet.buttonColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
@@ -198,9 +198,15 @@ function changeInterfaceColors(dishInfo) {
 function updateDishDetails(currentDish) {
   const dishInfo = currentDish.querySelector('dishe-plato');
   changeInterfaceColors(dishInfo);
+  image = dishInfo.getAttribute('image');
+  updatemodalimg(image);
   updatePrice(dishInfo.getAttribute('price'));
+  updatemodalprice(dishInfo.getAttribute('price'));
+  updatemodalnumber(dishInfo.getAttribute('discount'));
   updateTitle(dishInfo.getAttribute('title'));
+  updatemodaltitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
+  updatemodalparagraph(dishInfo.getAttribute('description'));
 }
 
 nextBtn.addEventListener('click', () => {
@@ -213,17 +219,39 @@ prevBtn.addEventListener('click', () => {
   updateDishDetails(dishesPlatos[currentIndex]);
 });
 
+function updatemodalimg(image) {
+  modalimg.src = image; 
+}
+
 function updatePrice(newPrice) {
   price.textContent = `$${newPrice}`;
+}
+
+function updatemodalprice(newPrice) {
+  modalprice.textContent = `$${newPrice}`;
+}
+
+function updatemodalnumber(newdiscount) {
+  modalnumber.textContent = `$${newdiscount}`;
 }
 
 function updateTitle(newTitle) {
   title.textContent = newTitle;
 }
 
+function updatemodaltitle(newTitle) {
+  modaltitle.textContent = newTitle;
+}
+
 function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
+
+function updatemodalparagraph(newDescription) {
+  modalparagraph.textContent = newDescription;
+}
+
+
 
 class Dishes extends HTMLElement {
   constructor() {
