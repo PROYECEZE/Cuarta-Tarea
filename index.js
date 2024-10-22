@@ -138,7 +138,7 @@ const title = document.querySelector('.js-food-spin-title');
 const description = document.querySelector('.js-food-spin-description');
 const pagination = document.querySelector('.js-carousel-food-spin-pagination');
 const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
-const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
+const itemSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const colorsvg = document.querySelector('.js-food-spin-svg');
 const modalVentana = document.querySelector('.js-ventana-modal');
@@ -146,9 +146,6 @@ const modalTitle = modalVentana.querySelector('.js-ventana-modal-title');
 const modalParagraph = modalVentana.querySelector('.js-ventana-modal-paragraph');
 const modalPrice = modalVentana.querySelector('.js-ventana-modal-price');
 const modalNumber = modalVentana.querySelector('.js-ventana-modal-number');
-const modalButton = modalVentana.querySelector ('.js-ventana-page-add-purchases');
-const modalContent = modalVentana.querySelector ('.js-ventana-modal-content');
-const modalClose = modalVentana.querySelector ('.js-ventana-modal-button');
 
 let currentIndex = 0;
 
@@ -160,11 +157,20 @@ function changeInterfaceColors(dishInfo) {
     hoverColor: dishInfo.getAttribute('hoverColor'),
   };
 
-  modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
-  modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
-  modalButton.style.setProperty('--shadow-modal', colorSet.shadowColor);
-  modalContent.style.setProperty('--modal-box', colorSet.shadowColor);
-  modalClose.style.setProperty('--modal-boxx', colorSet.shadowColor);
+  updateModalColors(colorSet);
+
+  function updateModalColors(colorSet) {
+    const modalVentana = document.querySelector('.js-ventana-modal');
+    const modalButton = modalVentana.querySelector('.js-ventana-page-add-purchases');
+    const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
+    const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
+
+    modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
+    modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
+    modalButton.style.setProperty('--shadow-modal', colorSet.shadowColor);
+    modalContent.style.setProperty('--modal-box', colorSet.shadowColor);
+    modalClose.style.setProperty('--modal-boxx', colorSet.shadowColor);
+  }
 
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
@@ -187,7 +193,7 @@ function changeInterfaceColors(dishInfo) {
     item.style.setProperty('--hover-color', colorSet.hoverColor);
   });
 
-  ItenSubmenu.forEach(submenu => {
+  itemSubmenu.forEach(submenu => {
     submenu.style.setProperty('--hover-color', colorSet.hoverColor);
   });
 
@@ -208,6 +214,7 @@ function updateDishDetails(currentDish) {
   updatemodalParagraph(dishInfo.getAttribute('description'));
 }
 
+
 nextBtn.addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % dishesPlatos.length; 
   updateDishDetails(dishesPlatos[currentIndex]);
@@ -222,7 +229,6 @@ function updateModalImage(imageSource) {
   const modalImg = modalVentana.querySelector ('.js-ventana-modal-img');
   modalImg.src = imageSource;
 }
-
 function updatePrice(newPrice) {
   price.textContent = `$${newPrice}`;
 }
@@ -232,12 +238,7 @@ function updatemodalPrice(newPrice) {
 }
 
 function updatemodalNumber(newDiscount) {
-  modalNumber.textContent = `$${newDiscount}`;
-}
-
-function updatemodalNumber(newDiscount) {
-  console.log("Actualizando descuento a:", newDiscount); 
-  modalNumber.textContent = `$${newDiscount}`;
+  modalNumber.textContent = `${newDiscount}%`; 
 }
 
 function updateTitle(newTitle) {
@@ -255,6 +256,7 @@ function updateDescription(newDescription) {
 function updatemodalParagraph(newDescription) {
   modalParagraph.textContent = newDescription;
 }
+
 
 class Dishes extends HTMLElement {
   constructor() {
