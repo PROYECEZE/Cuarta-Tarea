@@ -141,15 +141,14 @@ const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
 const ItenSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const colorsvg = document.querySelector('.js-food-spin-svg');
-const modalventana = document.querySelector('.js-ventana-Modal');
-const modaltitle = modalventana.querySelector('.js-ventana-modal-title');
-const modalparagraph = modalventana.querySelector('.js-ventana-modal-paragraph');
-const modalprice = modalventana.querySelector('.js-ventana-modal-price');
-const modalnumber = modalventana.querySelector('.js-ventana-modal-number');
-const modalbutton = modalventana.querySelector ('.js-ventana-page-add-purchases');
-const modalcontent = modalventana.querySelector ('.js-ventana-modal-content');
-const modalclose = modalventana.querySelector ('.js-ventana-modal-button');
-const modalimg = modalventana.querySelector ('.js-ventana-modal-img');
+const modalVentana = document.querySelector('.js-ventana-modal');
+const modalTitle = modalVentana.querySelector('.js-ventana-modal-title');
+const modalParagraph = modalVentana.querySelector('.js-ventana-modal-paragraph');
+const modalPrice = modalVentana.querySelector('.js-ventana-modal-price');
+const modalNumber = modalVentana.querySelector('.js-ventana-modal-number');
+const modalButton = modalVentana.querySelector ('.js-ventana-page-add-purchases');
+const modalContent = modalVentana.querySelector ('.js-ventana-modal-content');
+const modalClose = modalVentana.querySelector ('.js-ventana-modal-button');
 
 let currentIndex = 0;
 
@@ -161,11 +160,11 @@ function changeInterfaceColors(dishInfo) {
     hoverColor: dishInfo.getAttribute('hoverColor'),
   };
 
-  modalventana.style.setProperty('--modal-color', colorSet.buttonColor);
-  modalbutton.style.setProperty('--hover-modal', colorSet.hoverColor);
-  modalbutton.style.setProperty('--shadow-modal', colorSet.shadowColor);
-  modalcontent.style.setProperty('--modal-box', colorSet.shadowColor);
-  modalclose.style.setProperty('--modal-boxx', colorSet.shadowColor);
+  modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
+  modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
+  modalButton.style.setProperty('--shadow-modal', colorSet.shadowColor);
+  modalContent.style.setProperty('--modal-box', colorSet.shadowColor);
+  modalClose.style.setProperty('--modal-boxx', colorSet.shadowColor);
 
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
@@ -198,15 +197,15 @@ function changeInterfaceColors(dishInfo) {
 function updateDishDetails(currentDish) {
   const dishInfo = currentDish.querySelector('dishe-plato');
   changeInterfaceColors(dishInfo);
-  image = dishInfo.getAttribute('image');
-  updatemodalimg(image);
+  imageSource = dishInfo.getAttribute('image');
+  updateModalImage('image/' + imageSource);
   updatePrice(dishInfo.getAttribute('price'));
-  updatemodalprice(dishInfo.getAttribute('price'));
-  updatemodalnumber(dishInfo.getAttribute('discount'));
+  updatemodalPrice(dishInfo.getAttribute('price'));
+  updatemodalNumber(dishInfo.getAttribute('discount'));
   updateTitle(dishInfo.getAttribute('title'));
-  updatemodaltitle(dishInfo.getAttribute('title'));
+  updatemodalTitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
-  updatemodalparagraph(dishInfo.getAttribute('description'));
+  updatemodalParagraph(dishInfo.getAttribute('description'));
 }
 
 nextBtn.addEventListener('click', () => {
@@ -219,39 +218,43 @@ prevBtn.addEventListener('click', () => {
   updateDishDetails(dishesPlatos[currentIndex]);
 });
 
-function updatemodalimg(image) {
-  modalimg.src = image; 
+function updateModalImage(imageSource) {
+  const modalImg = modalVentana.querySelector ('.js-ventana-modal-img');
+  modalImg.src = imageSource;
 }
 
 function updatePrice(newPrice) {
   price.textContent = `$${newPrice}`;
 }
 
-function updatemodalprice(newPrice) {
-  modalprice.textContent = `$${newPrice}`;
+function updatemodalPrice(newPrice) {
+  modalPrice.textContent = `$${newPrice}`;
 }
 
-function updatemodalnumber(newdiscount) {
-  modalnumber.textContent = `$${newdiscount}`;
+function updatemodalNumber(newDiscount) {
+  modalNumber.textContent = `$${newDiscount}`;
+}
+
+function updatemodalNumber(newDiscount) {
+  console.log("Actualizando descuento a:", newDiscount); 
+  modalNumber.textContent = `$${newDiscount}`;
 }
 
 function updateTitle(newTitle) {
   title.textContent = newTitle;
 }
 
-function updatemodaltitle(newTitle) {
-  modaltitle.textContent = newTitle;
+function updatemodalTitle(newTitle) {
+  modalTitle.textContent = newTitle;
 }
 
 function updateDescription(newDescription) {
   description.textContent = newDescription;
 }
 
-function updatemodalparagraph(newDescription) {
-  modalparagraph.textContent = newDescription;
+function updatemodalParagraph(newDescription) {
+  modalParagraph.textContent = newDescription;
 }
-
-
 
 class Dishes extends HTMLElement {
   constructor() {
@@ -351,7 +354,7 @@ increaseBtn.addEventListener('click', () => {
 
 const openModalButton = document.querySelector('.js-food-spin-order-button');
 const closeModalButton = document.querySelector('.js-ventana-modal-button');
-const modal = document.querySelector('.js-ventana-Modal');
+const modal = document.querySelector('.js-ventana-modal');
 
 
 openModalButton.addEventListener('click', () => {
