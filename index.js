@@ -131,18 +131,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const prevBtn = document.querySelector('.js-prev');
 const nextBtn = document.querySelector('.js-next');
-const ellipse = document.querySelector('.js-food-spin-ellipse');
-const button = document.querySelector('.js-food-spin-order-button');
-const pagination = document.querySelector('.js-carousel-food-spin-pagination');
-const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
-const itemSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
-const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const price = document.querySelector('.js-food-spin-price');
-const colorsvg = document.querySelector('.js-food-spin-svg');
+const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const modalVentana = document.querySelector('.js-ventana-modal');
-const modalButton = modalVentana.querySelector('.js-ventana-page-add-purchases');
-const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
-const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
 
 let currentIndex = 0;
 
@@ -153,6 +144,16 @@ function changeInterfaceColors(dishInfo) {
     buttonColor: dishInfo.getAttribute('buttonColor'),
     hoverColor: dishInfo.getAttribute('hoverColor'),
   };
+
+  const menuItems = [...document.querySelectorAll('.js-food-spin-item')];
+  const itemSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
+  const ellipse = document.querySelector('.js-food-spin-ellipse');
+  const button = document.querySelector('.js-food-spin-order-button');
+  const colorsvg = document.querySelector('.js-food-spin-svg');
+  const pagination = document.querySelector('.js-carousel-food-spin-pagination');
+  const modalButton = modalVentana.querySelector('.js-ventana-page-add-purchases');
+  const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
+  const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
 
   modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
   modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
