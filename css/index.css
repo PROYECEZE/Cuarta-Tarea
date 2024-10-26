@@ -48,6 +48,23 @@ body {
   position: relative;
 }
 
+.foood-spin__location{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.foood-spin__Locate{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
 .food-spin__item:hover {
   --hover-color: #ff6600;
   color: var(--hover-color);
@@ -81,7 +98,6 @@ body {
   display: flex;
 }
 
-
 .food-spin__submenu-li:hover {
   background-color: var(--hover-color);
   color: var(--color-white);
@@ -96,6 +112,11 @@ body {
 .food-spin__svg{
   --bg-orange: var(--color-orange);
   fill: var(--bg-orange); 
+  margin-top: 3px;
+}
+
+.food-spin__svg--margin{
+  margin-top: 0px;
 }
 
 .food-spin__info {
@@ -566,7 +587,6 @@ body {
 .ventana-page__add-purchases:hover {
   --hover-modal: #ff6600;
   box-shadow: 0px 2px 8px 0px var(--hover-color);
-  background-color: var(--hover-modal);
 }
 
 .ventana-modal__add-cart {
@@ -588,7 +608,55 @@ body {
   justify-content: end;
 }
 
+.food-spin__locate-background{
+  background-color: #FFFFFF;
+  --modal-box: rgba(255, 146, 44, 0.5);
+  box-shadow: 0px 0px 25px var(--modal-box);
+  border-radius: 50px;
+  text-align: center;
+}
 
+.food-spin__locate-division{
+  display: flex;
+}
 
+.food-spin__locate-top{
 
+}
+
+.food-spin__locate-title{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #FF922C;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 23px;
+}
+
+.food-spin__locate-bord{
+  width: 289px;
+  border: 1px solid #FF922C;
+}
+
+.food-spin__locate-input{
+  display: flex;
+  font-weight: 400;
+  font-size: 14px;
+  color: #D8D8D8;
+  border: none;
+  flex-grow: 1;
+  flex: 1;
+  background-color: #F5F5F5;
+  justify-content: flex-start;
+}
+
+.food-spin__locate-group{
+  background-color: #F5F5F5;
+  padding: 14px;
+  border-radius: 8px;
+  margin-left: 42px;
+  margin-right: 42px;
+}
 

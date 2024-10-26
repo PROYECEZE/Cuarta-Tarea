@@ -149,22 +149,18 @@ function changeInterfaceColors(dishInfo) {
   const itemSubmenu = [...document.querySelectorAll('.js-food-spin-submenu')];
   const ellipse = document.querySelector('.js-food-spin-ellipse');
   const button = document.querySelector('.js-food-spin-order-button');
-  const colorsvg = document.querySelector('.js-food-spin-svg');
+  const colorsvgs = [...document.querySelectorAll('.js-food-spin-svg')];
   const pagination = document.querySelector('.js-carousel-food-spin-pagination');
-  const modalButton = modalVentana.querySelector('.js-ventana-page-add-purchases');
+  const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
   const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
   const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
-
   modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
-  modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
-  modalButton.style.setProperty('--shadow-modal', colorSet.shadowColor);
   modalContent.style.setProperty('--modal-box', colorSet.shadowColor);
   modalClose.style.setProperty('--modal-boxx', colorSet.shadowColor);
 
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
   price.style.setProperty('--bg-orange', colorSet.buttonColor);
-  colorsvg.style.setProperty('--bg-orange', colorSet.buttonColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
@@ -184,6 +180,15 @@ function changeInterfaceColors(dishInfo) {
 
   itemSubmenu.forEach(submenu => {
     submenu.style.setProperty('--hover-color', colorSet.hoverColor);
+  });
+
+  colorsvgs.forEach(colorsvg => {
+    colorsvg.style.setProperty('--bg-orange', colorSet.buttonColor);
+  });
+
+  modalButtons.forEach(modalButton => {
+    modalButton.style.setProperty('--hover-modal', colorSet.hoverColor);
+    modalButton.style.setProperty('--shadow-modal', colorSet.shadowColor);
   });
 
   price.style.color = colorSet.buttonColor;
