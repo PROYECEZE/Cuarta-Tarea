@@ -570,6 +570,7 @@ body {
 .ventana-page__add-purchases:hover {
   --hover-modal: #ff6600;
   box-shadow: 0px 2px 8px 0px var(--hover-color);
+  background-color: var(--hover-modal);
 }
 
 .ventana-modal__add-cart {
@@ -621,7 +622,8 @@ body {
   text-align: center;
   margin-top: 50px;
   z-index: 1000;
-  --locate-orange: #FF922C;
+  --title-color: #FF922C;
+  --featured-color: #FF6600;
 }
 
 .show {
@@ -642,25 +644,23 @@ body {
   font-size: 28px;
   line-height: 24px;
   letter-spacing: 0.02em;
-  color: var(--locate-orange);
+  color: var(--title-color);
   text-align: center;
   margin-top: 30px;
   margin-bottom: 23px;
 }
 
-.food-spin__locate-title--style{
-  --color-title: #ff6600;
-  color: var(--color-title);
+.food-spin__locate-title--active{
+  color: var(--featured-color);
 }
 
 .food-spin__locate-bord{
   width: 289px;
-  border: 1px solid var(--locate-orange);
+  border: 1px solid var(--title-color);
 }
 
-.food-spin__locate-bord--style{
-  --color-title: #ff6600;
-  border: 5px solid var(--color-title);
+.food-spin__locate-bord--active{
+  border: 5px solid var(--featured-color);
   margin-top: -2.5px;
 }
 
@@ -720,11 +720,11 @@ body {
 }
 
 .food-spin__svg-map{
-  stroke: var(--locate-orange);
+  stroke: var(--title-color);
 }
 
 .food-spin__circle-color{
-  fill: var(--locate-orange);
+  fill: var(--title-color);
 }
 
 .food-spin__Locate-text{
@@ -733,4 +733,8 @@ body {
   line-height: 27px;
   color: #7A7373;
   margin-top: 10px;
+}
+
+.food-spin__locate-store{
+  display: none;
 }

@@ -134,7 +134,7 @@ const nextBtn = document.querySelector('.js-next');
 const price = document.querySelector('.js-food-spin-price');
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const modalVentana = document.querySelector('.js-ventana-modal');
-const ventanalocation = document.querySelector('.js-food-spin-locate-background');
+const ventanaLocation = document.querySelector('.js-food-spin-locate-background');
 
 let currentIndex = 0;
 
@@ -151,28 +151,21 @@ function changeInterfaceColors(dishInfo) {
   const ellipse = document.querySelector('.js-food-spin-ellipse');
   const button = document.querySelector('.js-food-spin-order-button');
   const colorsvgs = [...document.querySelectorAll('.js-food-spin-svg')];
-  const colortitle= ventanalocation.querySelector('.js-food-spin-locate-title');
-  const locatetitle = ventanalocation.querySelector('.js-food-spin-locate-title--style');
-  const colorbord = ventanalocation.querySelector('.js-food-spin-locate-bord');
-  const bordstyle = ventanalocation.querySelector('.js-food-spin-locate-bord--style');
-  const colormap = ventanalocation.querySelector('.js-food-spin-svg-map');
   const pagination = document.querySelector('.js-carousel-food-spin-pagination');
   const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
   const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
   const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
+
   modalVentana.style.setProperty('--modal-color', colorSet.buttonColor);
   modalContent.style.setProperty('--modal-box', colorSet.shadowColor);
   modalClose.style.setProperty('--modal-boxx', colorSet.shadowColor);
-
   ellipse.style.setProperty('--bg-color', colorSet.ellipseColor);
   pagination.style.setProperty('--bg-orange', colorSet.buttonColor);
   price.style.setProperty('--bg-orange', colorSet.buttonColor);
-  colormap.style.setProperty('--locate-orange', colorSet.buttonColor);
-  locatetitle.style.setProperty('--color-title', colorSet.hoverColor);
-  colortitle.style.setProperty('--locate-orange', colorSet.buttonColor);
-  colorbord.style.setProperty('--locate-orange', colorSet.buttonColor);
-  bordstyle.style.setProperty('--color-title', colorSet.hoverColor);
-  ventanalocation.style.setProperty('--modal-box', colorSet.shadowColor);
+  ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
+  ventanaLocation.style.setProperty('--title-color', colorSet.buttonColor);
+  ventanaLocation.style.setProperty('--featured-color', colorSet.hoverColor);
+  ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
