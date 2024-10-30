@@ -252,22 +252,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const addressTitle = document.querySelectorAll(".js-food-spin-location-title")[0];
-  const pickupTitle = document.querySelectorAll(".js-food-spin-location-title")[1];
-  const addressBord = document.querySelectorAll(".js-food-spin-location-bord")[0];
-  const pickupBord = document.querySelectorAll(".js-food-spin-location-bord")[1];
+document.addEventListener('DOMContentLoaded', () => {
+  const addressTitle = document.querySelectorAll('.js-food-spin-location-title')[0];
+  const pickupTitle = document.querySelectorAll('.js-food-spin-location-title')[1];
+  const addressBord = document.querySelectorAll('.js-food-spin-location-bord')[0];
+  const pickupBord = document.querySelectorAll('.js-food-spin-location-bord')[1];
   const locateStoreSection = document.querySelector(".js-food-spin-location-store");
 
   const activateAddressTab = () => {
-    addressTitle.classList.toggle("food-spin__location-title--active");
-    addressBord.classList.toggle("food-spin__location-bord--active");
-    pickupTitle.classList.toggle("food-spin__location-title--active");
-    pickupBord.classList.toggle("food-spin__location-bord--active");
-    locateStoreSection.classList.toggle("food-spin__location-store--open");
+    addressTitle.classList.toggle('food-spin__location-title--active');
+    addressBord.classList.toggle('food-spin__location-bord--active');
+    pickupTitle.classList.toggle('food-spin__location-title--active');
+    pickupBord.classList.toggle('food-spin__location-bord--active');
+    locateStoreSection.classList.toggle('food-spin__location-store--open');
   };
 
-  addressTitle.addEventListener("click", activateAddressTab);
-  pickupTitle.addEventListener("click", activateAddressTab);
+  addressTitle.addEventListener('click', activateAddressTab);
+  pickupTitle.addEventListener('click', activateAddressTab);
 });
 
