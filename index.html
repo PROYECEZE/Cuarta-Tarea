@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/statement.css">
@@ -71,9 +72,9 @@
           </ul>
         </nav>
       </div>
-      <div class="food-spin__location js-food-spin-location">
-        <div class="food-spin__Locate">
-          <svg class="food-spin__svg food-spin__svg--margin js-food-spin-svg" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="food-spin__actions">
+        <button class="food-spin__location js-food-spin-location">
+          <svg class="food-spin__svg food-spin__svg--margin js-food-spin-svg" aria-hidden="true" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M13 22C17.9706 22 22 17.9706 22 13C22 8.02944 17.9706 4 13 4C8.02944 4 4 8.02944 4 13C4 17.9706 8.02944 22 13 22ZM13 24C19.0751 24 24 19.0751 24 13C24 6.92487 19.0751 2 13 2C6.92487 2 2 6.92487 2 13C2 19.0751 6.92487 24 13 24Z" />
             <path d="M16.5 13C16.5 14.933 14.933 16.5 13 16.5C11.067 16.5 9.5 14.933 9.5 13C9.5 11.067 11.067 9.5 13 9.5C14.933 9.5 16.5 11.067 16.5 13Z" />
             <path d="M12 0H14V6H12V0Z" />
@@ -81,11 +82,11 @@
             <path d="M25.9976 12L26 14L20 14.0071L19.9976 12.0071L25.9976 12Z" />
             <path d="M6 12L6.00238 14L0.00238128 14.0071L4.29153e-06 12.0071L6 12Z" />
           </svg>
-          </svg> Location <svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </svg> Location <svg  aria-hidden="true" width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M9 5L5 1L1 5" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M1 9L5 13L9 9" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
-        </div>
+        </button>
         <a href="" aria-label="enter store">
           <svg class="food-spin__svg js-food-spin-svg" width="20" height="22" viewBox="0 0 20 22" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <g clip-path="url(#clip0_5_28)">
@@ -200,7 +201,7 @@
           <dl>
             <dt class="ventana-modal__title js-ventana-modal-title">Green Goddess Chicken Salad</dt>
             <dd class="ventana-modal__Discount">
-              <svg class="ventana-modal__svg" width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="ventana-modal__svg" aria-hidden="true" width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.98046 0.852213C8.33504 -0.284071 9.94323 -0.284071 10.2978 0.852213V0.852213C10.5632 1.70275 11.624 1.98699 12.2792 1.38311V1.38311C13.1544 0.576351 14.5471 1.38045 14.286 2.54179V2.54179C14.0906 3.41108 14.8672 4.18764 15.7365 3.99223V3.99223C16.8978 3.73116 17.7019 5.1239 16.8952 5.99912V5.99912C16.2913 6.65424 16.5755 7.71504 17.4261 7.98046V7.98046C18.5623 8.33504 18.5623 9.94323 17.4261 10.2978V10.2978C16.5755 10.5632 16.2913 11.624 16.8952 12.2792V12.2792C17.7019 13.1544 16.8978 14.5471 15.7365 14.286V14.286C14.8672 14.0906 14.0906 14.8672 14.286 15.7365V15.7365C14.5471 16.8978 13.1544 17.7019 12.2792 16.8952V16.8952C11.624 16.2913 10.5632 16.5755 10.2978 17.4261V17.4261C9.94323 18.5623 8.33504 18.5623 7.98046 17.4261V17.4261C7.71504 16.5755 6.65424 16.2913 5.99912 16.8952V16.8952C5.1239 17.7019 3.73116 16.8978 3.99223 15.7365V15.7365C4.18764 14.8672 3.41108 14.0906 2.54179 14.286V14.286C1.38045 14.5471 0.576351 13.1544 1.38311 12.2792V12.2792C1.98699 11.624 1.70275 10.5632 0.852213 10.2978V10.2978C-0.284071 9.94323 -0.284071 8.33504 0.852213 7.98046V7.98046C1.70275 7.71504 1.98699 6.65424 1.38311 5.99912V5.99912C0.576351 5.1239 1.38045 3.73116 2.54179 3.99223V3.99223C3.41108 4.18764 4.18764 3.41108 3.99223 2.54179V2.54179C3.73116 1.38045 5.1239 0.576351 5.99912 1.38311V1.38311C6.65424 1.98699 7.71504 1.70275 7.98046 0.852213V0.852213Z"/>
                 <path d="M5 6.788C5 6.244 5.164 5.812 5.492 5.492C5.82 5.164 6.24 5 6.752 5C7.264 5 7.684 5.164 8.012 5.492C8.34 5.812 8.504 6.244 8.504 6.788C8.504 7.34 8.34 7.78 8.012 8.108C7.684 8.428 7.264 8.588 6.752 8.588C6.24 8.588 5.82 8.428 5.492 8.108C5.164 7.78 5 7.34 5 6.788ZM12.008 5.132L7.148 13.508H6.068L10.928 5.132H12.008ZM6.752 5.672C6.48 5.672 6.264 5.768 6.104 5.96C5.952 6.144 5.876 6.42 5.876 6.788C5.876 7.156 5.952 7.436 6.104 7.628C6.264 7.82 6.48 7.916 6.752 7.916C7.024 7.916 7.24 7.82 7.4 7.628C7.56 7.428 7.64 7.148 7.64 6.788C7.64 6.42 7.56 6.144 7.4 5.96C7.24 5.768 7.024 5.672 6.752 5.672ZM9.596 11.852C9.596 11.3 9.76 10.864 10.088 10.544C10.416 10.216 10.836 10.052 11.348 10.052C11.86 10.052 12.276 10.216 12.596 10.544C12.924 10.864 13.088 11.3 13.088 11.852C13.088 12.396 12.924 12.832 12.596 13.16C12.276 13.488 11.86 13.652 11.348 13.652C10.836 13.652 10.416 13.492 10.088 13.172C9.76 12.844 9.596 12.404 9.596 11.852ZM11.336 10.736C11.064 10.736 10.848 10.832 10.688 11.024C10.528 11.208 10.448 11.484 10.448 11.852C10.448 12.212 10.528 12.488 10.688 12.68C10.848 12.864 11.064 12.956 11.336 12.956C11.608 12.956 11.824 12.864 11.984 12.68C12.144 12.488 12.224 12.212 12.224 11.852C12.224 11.484 12.144 11.208 11.984 11.024C11.824 10.832 11.608 10.736 11.336 10.736Z" fill="white"/>
                 </svg>
@@ -268,30 +269,30 @@
           </ul>
         </div>
         <button class="ventana-modal__button js-ventana-modal-button">
-          <svg width="18" height="18" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg aria-label="enter store" width="18" height="18" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 29L12.631 13.34L1.93862 0H4.59672L14.01 11.6879L23.4033 0H26.0614L15.369 13.34L28 29H25.262L14.01 15.0273L2.73804 29H0Z" fill="white" />
           </svg>
         </button>
       </div>
     </section>
-    <section class="food-spin__locate-background js-food-spin-locate-background">
-      <div class="food-spin__locate-division">
-        <div class="food-spin__locate-top">
-          <h2 class="food-spin__locate-title food-spin__locate-title--active js-food-spin-locate-title">Address</h2>
-          <div class="food-spin__locate-bord food-spin__locate-bord--active js-food-spin-locate-bord"></div>
+    <section class="food-spin__location-background js-food-spin-location-background">
+      <div class="food-spin__location-division">
+        <div class="food-spin__location-top">
+          <h2 class="food-spin__location-title food-spin__location-title--active js-food-spin-location-title">Address</h2>
+          <div class="food-spin__location-bord food-spin__location-bord--active js-food-spin-location-bord"></div>
         </div>
-        <div class="food-spin__locate-top">
-          <h2 class="food-spin__locate-title js-food-spin-locate-title">Pick Up </h2>
-          <div class="food-spin__locate-bord js-food-spin-locate-bord"></div>
+        <div class="food-spin__location-top">
+          <h2 class="food-spin__location-title js-food-spin-location-title">Pick Up </h2>
+          <div class="food-spin__location-bord js-food-spin-location-bord"></div>
         </div>
       </div>
-      <div class="food-spin__locate-group">
-        <input class="food-spin__locate-input" type="text" placeholder="search location" required aria-label="enter your location">
+      <div class="food-spin__location-group">
+        <input class="food-spin__location-input" type="text" placeholder="search location" required aria-label="enter your location">
       </div>
-      <div class="food-spin__Locate-hover">
-        <div class="food-spin__locate-bords"></div>
-        <div class="food-spin__locate-use">
-          <svg class="food-spin__svg food-spin__svg--margin js-food-spin-svg" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="food-spin__location-hover">
+        <div class="food-spin__location-bords"></div>
+        <div class="food-spin__location-use">
+          <svg class="food-spin__svg food-spin__svg--margin js-food-spin-svg" aria-hidden="true" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M13 22C17.9706 22 22 17.9706 22 13C22 8.02944 17.9706 4 13 4C8.02944 4 4 8.02944 4 13C4 17.9706 8.02944 22 13 22ZM13 24C19.0751 24 24 19.0751 24 13C24 6.92487 19.0751 2 13 2C6.92487 2 2 6.92487 2 13C2 19.0751 6.92487 24 13 24Z" />
             <path d="M16.5 13C16.5 14.933 14.933 16.5 13 16.5C11.067 16.5 9.5 14.933 9.5 13C9.5 11.067 11.067 9.5 13 9.5C14.933 9.5 16.5 11.067 16.5 13Z" />
             <path d="M12 0H14V6H12V0Z" />
@@ -300,27 +301,28 @@
             <path d="M6 12L6.00238 14L0.00238128 14.0071L4.29153e-06 12.0071L6 12Z" />
           </svg> USE YOUR CURRENT LOCATION
         </div>
-        <div class="food-spin__locate-bords"></div>
+        <div class="food-spin__location-bords"></div>
       </div>
-      <div class="food-spin__Locate-map">
-        <svg class="food-spin__svg-map js-food-spin-svg-map" width="156" height="160" viewBox="0 0 156 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="food-spin__location-map">
+        <svg class="food-spin__svg-map js-food-spin-svg-map" aria-hidden="true" width="156" height="160" viewBox="0 0 156 160" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M89.5 33C89.5 37.6944 85.6944 41.5 81 41.5C76.3056 41.5 72.5 37.6944 72.5 33C72.5 28.3056 76.3056 24.5 81 24.5C85.6944 24.5 89.5 28.3056 89.5 33Z" stroke-width="5" />
           <path d="M81.1949 84C104.41 56.8813 107.327 35.8127 108 28.4002C108 11.0462 92.7287 4.90258 85.0931 4H81.1949C59.7508 4.42384 54.1299 20.4434 54 28.4002C54 42.7189 69.0828 71.5254 81.1949 84Z" stroke-width="7" />
           <path d="M107.5 35.5477H116.5L122 44.5477H127.5L141 40.5477C155 36.5477 151.5 57.0477 151.5 59.0477C151.5 60.6477 147.5 64.381 145.5 66.0477C127.5 66.8477 140 88.381 148.5 99.0477L131.5 128.548V136.048L135.5 142.548L120 155.048L90.5 138.048C82.1 131.648 74 144.714 71 152.048L64.5 149.048C58.6667 148.214 46 146.448 42 146.048C38 145.648 37 143.548 37 142.548L31.5 136.048L28.5 128.548V120.548L22.5 115.548L18 112.048C22.4 90.8477 10.5 86.2143 4 86.5477V84.0477L7.5 77.0477L12.5 69.5477L18 61.0477L22.5 55.0477H31.5C34.3333 56.381 39.4 56.5477 37 46.5477C34.6667 41.7143 34.6 32.2477 53 33.0477" stroke-width="7" />
           <circle class="food-spin__circle-color" cx="59.5" cy="94.5" r="7.5" />
         </svg>
-        <p class="food-spin__Locate-text">Please search for your location</p>
+        <p class="food-spin__location-text">Please search for your location</p>
       </div>
-      <div class="food-spin__locate-store">
-        <p class="food-spin__locate-shop">Locate a store </p>
-        <svg width="25" height="27" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4.89343 13.4746H20.8934" stroke="#363535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M14.8934 6.96555L20.8934 13.4746L14.8934 19.9836" stroke="#363535" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <button class="food-spin__location-store js-food-spin-location-store">
+        <span class="food-spin__location-shop">Locate a store</span>
+        <svg class="food-spin__location-indicator" width="25" height="27" viewBox="0 0 25 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4.89343 13.4746H20.8934" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M14.8934 6.96555L20.8934 13.4746L14.8934 19.9836" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </div>
+      </button>
     </section>
   </main>
   <script src="index.js"></script>
+  <script src="Fuction.js"></script>
 </body>
 </html>
 

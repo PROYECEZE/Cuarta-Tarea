@@ -40,7 +40,7 @@ body {
 
 .food-spin__item {
   margin-right: 20px;
-  font-size: 14px;
+  font-size: var(--font-size-smalls);
   font-weight: var(--font-weight-small);
   line-height: 21px;
   color: var(--color-black-small);
@@ -68,7 +68,7 @@ body {
 }
 
 .food-spin__submenu-li {
-  font-size: 16px;
+  font-size: var(--sixteen-pixeles);
   display: block;
   padding: 10px 15px;
   text-decoration: none;
@@ -115,7 +115,7 @@ body {
   background-color: var(--bg-color);
   position: absolute;
   width: 1294px;
-  height: 1131px;
+  height: 1127px;
   margin-left: 162px;
   top: -588px;
   border-radius: 50%; 
@@ -165,7 +165,7 @@ body {
   --shadow-bg: var(--shadow-color);
   box-shadow: 0px 20px 40px 0px var(--shadow-bg);
   font-size: var(--font-size-smalln);
-  font-weight: 700;
+  font-weight: var(--font-weight-boldX);
   line-height: var(--twenty-pixel);
   border-radius: 69px;
   margin-top: 28px;
@@ -362,7 +362,7 @@ body {
   border-radius: 50px;
   margin-top: 150px;
   max-width: 975px;
-  gap: 28px;
+  gap: var(--twenty-eight);
 }
 
 .ventana-modal__img {
@@ -382,7 +382,7 @@ body {
   --modal-boxx: rgba(255, 146, 44, 0.7);
   box-shadow: 0px 0px 10px var(--modal-boxx);
   border: none;
-  color: #FFFFFF;
+  color: var(--color-white);
   padding: 8px;
   border-radius: 50%;
   margin-top: -8px;
@@ -398,7 +398,7 @@ body {
 }
 
 .ventana-modal__title {
-  font-weight: 700;
+  font-weight: var(--font-weight-boldX);
   font-size: 54px;
   line-height: 70px;
   letter-spacing: 0.02em;
@@ -407,8 +407,8 @@ body {
 
 .ventana-modal__Discount {
   padding-top: 30px;
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-smalls);
   line-height: 21px;
   color: #404040;
   margin-left: 0px;
@@ -424,15 +424,15 @@ body {
   padding-top: 30px;
   padding-right: 44px;
   margin-left: 0px;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  color: #7A7373;
+  font-weight: var(--font-weight);
+  font-size: var(--eighteen-pixel);
+  line-height: var(--twenty-seven);
+  color: var(--color-black-medium);
 }
 
 .ventana-modal__price {
   display: flex;
-  font-weight: 700;
+  font-weight: var(--font-weight-boldX);
   font-size: 48px;
   line-height: 60px;
   letter-spacing: -0.01em;
@@ -444,11 +444,11 @@ body {
 }
 
 .ventana-modal__number {
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   font-size: 34px;
   line-height: 44px;
   letter-spacing: -0.01em;
-  color: #A6A6A6;
+  color: var(--color-soft-gray);
   margin-top: 4px;
   font-style: italic;
 }
@@ -467,7 +467,7 @@ body {
   justify-content: center;
   gap: 5px;
   position: absolute;
-  background-color: white;
+  background-color: var(--color-white);
   height: 40px;
 }
 
@@ -483,7 +483,7 @@ body {
 
 .ventana-modal__quantity {
   font-size: 22px;
-  font-weight: 400;
+  font-weight: var(--font-weight);
   line-height: 24px;
   text-align: center;
   width: 64px;
@@ -494,7 +494,7 @@ body {
   border-left: 1.5px solid var(--color-solid);
   border-right: 1.5px solid var(--color-solid);
   color: var(--color-solid);
-  background-color: #f5f5f5;
+  background-color: var(--color-whiteX);
   border-bottom: none;
   border-top: none;
 }
@@ -510,25 +510,25 @@ body {
 
 .ventana-modal__requires {
   margin-left: 210px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 27px;
-  color: #7A7373;
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--sixteen-pixeles);
+  line-height: var(--twenty-seven);
+  color: var(--color-black-medium);
   margin-top: -16px;
 }
 
 .ventana-modal__input {
-  background-color: #F5F5F5;
+  background-color: var(--color-whiteX);
   border-radius: 8px;
   box-sizing: border-box;
-  border: 1px solid #A6A6A6;
+  border: 1px solid var(--color-soft-gray);
   align-items: center;
   display: flex;
 }
 
 .ventana-modal__svgs {
-  background-color: #FFFFFF;
-  border-right: 1px solid #A6A6A6;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-soft-gray);
   border-radius: 8px 0px 0px 8px;
   padding: 4px;
   fill: var(--modal-color); 
@@ -536,11 +536,11 @@ body {
 }
 
 .ventana-modal__bevegare {
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-smalls);
   line-height: 21px;
   color: var(--modal-color);
-  background: #F5F5F5;
+  background: var(--color-whiteX);
   border: none;
   outline: none;
   flex: 1;
@@ -574,11 +574,11 @@ body {
 }
 
 .ventana-modal__add-cart {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--sixteen-pixeles);
   line-height: 20px;
   letter-spacing: 0.10em;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .ventana-modal__payment-methods {
@@ -592,30 +592,32 @@ body {
   justify-content: end;
 }
 
-.food-spin__location{
+.food-spin__actions{
   position: relative;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  color: #333333;
   display: flex;
   align-items: center;
   gap: 48px;
 }
 
-.food-spin__Locate{
+.food-spin__location{
   display: flex;
   align-items: center;
   gap: 7px;
   cursor: pointer;
+  border: none;
+  color: var(--color-black-small);
+  font-weight: 500;
+  font-size: var(--font-size-smalls);
+  line-height: 21px;
+  background: none;
 }
 
-.food-spin__locate-background{
+.food-spin__location-background{
   display: none;
   position: absolute;
   top: 4%;
   left: 45%;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   --modal-box: rgba(255, 146, 44, 0.5);
   box-shadow: 0px 0px 25px var(--modal-box);
   border-radius: 50px;
@@ -626,22 +628,18 @@ body {
   --featured-color: #FF6600;
 }
 
-.show {
-  display: block;
-}
-
-.food-spin__locate-division{
+.food-spin__location-division{
   display: flex;
 }
 
-.food-spin__locate-top{
+.food-spin__location-top{
   margin-top: 10px;
   cursor: pointer;
 }
 
-.food-spin__locate-title{
-  font-weight: 600;
-  font-size: 28px;
+.food-spin__location-title{
+  font-weight: var(--font-weight-bold);
+  font-size: var(--twenty-eight);
   line-height: 24px;
   letter-spacing: 0.02em;
   color: var(--title-color);
@@ -650,50 +648,51 @@ body {
   margin-bottom: 23px;
 }
 
-.food-spin__locate-title--active{
+.food-spin__location-title--active{
   color: var(--featured-color);
 }
 
-.food-spin__locate-bord{
+.food-spin__location-bord{
   width: 289px;
   border: 1px solid var(--title-color);
 }
 
-.food-spin__locate-bord--active{
+.food-spin__location-bord--active{
   border: 5px solid var(--featured-color);
   margin-top: -2.5px;
 }
 
-.food-spin__locate-bords{
+.food-spin__location-bords{
   width: 586px;
-  border: 2px solid #F5F5F5;
+  border: 2px solid var(--color-whiteX);
   margin-top: 21px;
   margin-bottom: 21px;
 }
 
-.food-spin__Locate-hover:hover{
-  background-color: #F5F5F5;
+.food-spin__location-hover:hover{
+  background-color: var(--color-whiteX);
+  cursor: pointer;
 }
 
-.food-spin__locate-input{
+.food-spin__location-input{
   display: flex;
-  font-weight: 400;
-  font-size: 14px;
-  color: #D8D8D8;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size-smalls);
+  color: var(--color-solid);
   border: none;
   flex-grow: 1;
-  background-color: #F5F5F5;
+  background-color: var(--color-whiteX);
   justify-content: flex-start;
   outline: none;
 }
 
-.food-spin__locate-input::placeholder {
-  color: #D8D8D8;
+.food-spin__location-input::placeholder {
+  color: var( --color-solid);
 }
 
-.food-spin__locate-group{
+.food-spin__location-group{
   display: flex;
-  background-color: #F5F5F5;
+  background-color: var(--color-whiteX);
   padding: 14px;
   border-radius: 8px;
   margin-left: 42px;
@@ -701,22 +700,22 @@ body {
   margin-top: 21px;
 }
 
-.food-spin__locate-group:focus-within {
+.food-spin__location-group:focus-within {
   border-color: #667085;
   box-shadow: 0px 0px 0px 4px rgba(133, 102, 102, 0.1);
 }
 
-.food-spin__locate-use{
+.food-spin__location-use{
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   margin-left: 44px;
   gap: 30px;
-  cursor: pointer;
 }
 
-.food-spin__Locate-map{
+.food-spin__location-map{
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 88px;
 }
 
 .food-spin__svg-map{
@@ -727,14 +726,51 @@ body {
   fill: var(--title-color);
 }
 
-.food-spin__Locate-text{
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  color: #7A7373;
+.food-spin__location-text{
+  font-weight: var(--font-weight);
+  font-size: var(--eighteen-pixel);
+  line-height: var(--twenty-seven);
+  color: var(--color-black-medium);
   margin-top: 10px;
 }
 
-.food-spin__locate-store{
+.food-spin__location-store{
   display: none;
+  background-color: var(--color-white);
+  box-shadow: 0px -1px 12px rgba(212, 177, 177, 0.25);
+  border-radius: 10px;
+  padding: 20px 40px;
+  margin-top: -72px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: var(--title-color);
+  margin-bottom: 20px;
+}
+
+.food-spin__location-store:hover{
+  background-color: var(--color-solid);
+}
+
+.food-spin__location-store--open{
+  display: flex;
+}
+
+.show {
+  display: block;
+}
+
+.food-spin__location-shop{
+  display: flex;
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--eighteen-pixel);
+  line-height: var(--twenty-seven);
+  color: var(--title-color);
+  margin: 0px;
+  justify-content: center;
+  gap: 14px;
+}
+
+.food-spin__location-indicator{
+  stroke: var(--title-color);
 }

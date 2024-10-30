@@ -1,140 +1,10 @@
 
-function initCarousel(options) {
-  function CustomCarousel(options) {
-    this.init(options);
-    this.addListeners();
-    return this;
-  }
-
-  CustomCarousel.prototype.init = function (options) {
-    this.node = options.node;
-    this.node.slider = this;
-    this.slides = this.node.querySelector('.js-carousel-food-spin-dishs').children;
-    this.slidesN = this.slides.length;
-    this.pagination = this.node.querySelector('.js-carousel-food-spin-pagination');
-    this.pagTransf = "translate( -50%, -50% )";
-    this.dots = this.pagination.children;
-    this.dotsN = this.dots.length;
-    this.step = -360 / this.dotsN;
-    this.angle = 0;
-    this.next = this.node.querySelector('.js-next');
-    this.prev = this.node.querySelector('.js-prev');
-    this.activeN = options.activeN || 0;
-    this.prevN = this.activeN;
-    this.speed = options.speed || 800;
-    this.autoplay = options.autoplay || false;
-    this.autoplayId = null;
-
-    this.setSlide(this.activeN);
-    this.arrangeDots();
-    this.pagination.style.transitionDuration = this.speed + "ms";
-  };
-
-  CustomCarousel.prototype.addListeners = function () {
-    var slider = this;
-
-    if (this.next) {
-      this.next.addEventListener("click", function () {
-        slider.setSlide(slider.activeN + 1);
-      });
-    }
-
-    if (this.prev) {
-      this.prev.addEventListener("click", function () {
-        slider.setSlide(slider.activeN - 1);
-      });
-    }
-
-    for (var i = 0; i < this.dots.length; i++) {
-      this.dots[i].addEventListener(
-        "click",
-        (function (i) {
-          return function () {
-            slider.setSlide(i);
-          };
-        })(i)
-      );
-    }
-  };
-
-  CustomCarousel.prototype.setSlide = function (slideN) {
-    this.slides[this.activeN].classList.remove("active");
-    if (this.dots[this.activeN]) {
-      this.dots[this.activeN].classList.remove("active");
-    }
-
-    this.prevN = this.activeN;
-    this.activeN = slideN;
-
-    if (this.activeN < 0) this.activeN = this.slidesN - 1;
-    else if (this.activeN >= this.slidesN) this.activeN = 0;
-
-    this.slides[this.activeN].classList.toggle("active");
-    if (this.dots[this.activeN]) {
-      this.dots[this.activeN].classList.toggle("active");
-    }
-    this.rotate();
-  };
-
-  CustomCarousel.prototype.rotate = function () {
-    if (this.activeN < this.dotsN) {
-      this.angle += (function (dots, next, prev, step) {
-        var inc,
-          half = dots / 2;
-
-        if (prev > dots) prev = dots - 1;
-        if (Math.abs((inc = next - prev)) <= half) return step * inc;
-        if (Math.abs((inc = next - prev + dots)) <= half) return step * inc;
-        if (Math.abs((inc = next - prev - dots)) <= half) return step * inc;
-      })(this.dotsN, this.activeN, this.prevN, this.step);
-
-      this.pagination.style.transform =
-        this.pagTransf + "rotate(" + this.angle + "deg)";
-    }
-  };
-
-  CustomCarousel.prototype.startAutoplay = function () {
-    var slider = this;
-
-    this.autoplayId = setInterval(function () {
-      slider.setSlide(slider.activeN + 1);
-    }, this.autoplay);
-  };
-
-  CustomCarousel.prototype.stopAutoplay = function () {
-    clearInterval(this.autoplayId);
-  };
-
-  CustomCarousel.prototype.arrangeDots = function () {
-    for (var i = 0; i < this.dotsN; i++) {
-      this.dots[i].style.transform = "rotate(" + (360 / this.dotsN) * i + "deg)";
-    }
-  };
-
-  return new CustomCarousel(options);
-}
-
-var plugins = {
-  customCarousel: document.querySelectorAll('.js-carousel-food-spin')
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-  if (plugins.customCarousel.length) {
-    for (var i = 0; i < plugins.customCarousel.length; i++) {
-      var carousel = initCarousel({
-        node: plugins.customCarousel[i],
-        speed: plugins.customCarousel[i].getAttribute('data-speed'),
-      });
-    }
-  }
-});
-
 const prevBtn = document.querySelector('.js-prev');
 const nextBtn = document.querySelector('.js-next');
 const price = document.querySelector('.js-food-spin-price');
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const modalVentana = document.querySelector('.js-ventana-modal');
-const ventanaLocation = document.querySelector('.js-food-spin-locate-background');
+const ventanaLocation = document.querySelector('.js-food-spin-location-background');
 
 let currentIndex = 0;
 
@@ -165,7 +35,6 @@ function changeInterfaceColors(dishInfo) {
   ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
   ventanaLocation.style.setProperty('--title-color', colorSet.buttonColor);
   ventanaLocation.style.setProperty('--featured-color', colorSet.hoverColor);
-  ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
@@ -360,7 +229,6 @@ const openModalButton = document.querySelector('.js-food-spin-order-button');
 const closeModalButton = document.querySelector('.js-ventana-modal-button');
 const modal = document.querySelector('.js-ventana-modal');
 
-
 openModalButton.addEventListener('click', () => {
   modal.style.display = 'block';
 });
@@ -372,15 +240,34 @@ closeModalButton.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
   const locateButton = document.querySelector('.js-food-spin-location');
-  const locateBackground = document.querySelector('.js-food-spin-locate-background');
 
   locateButton.addEventListener('click', function (event) {
     event.stopPropagation(); 
-    locateBackground.classList.toggle('show'); 
+    ventanaLocation.classList.toggle('show'); 
   });
   document.addEventListener('click', function (event) {
-    if (!locateBackground.contains(event.target) && !locateButton.contains(event.target)) {
-      locateBackground.classList.remove('show');
+    if (!ventanaLocation.contains(event.target) && !locateButton.contains(event.target)) {
+      ventanaLocation.classList.remove('show');
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addressTitle = document.querySelectorAll(".js-food-spin-location-title")[0];
+  const pickupTitle = document.querySelectorAll(".js-food-spin-location-title")[1];
+  const addressBord = document.querySelectorAll(".js-food-spin-location-bord")[0];
+  const pickupBord = document.querySelectorAll(".js-food-spin-location-bord")[1];
+  const locateStoreSection = document.querySelector(".js-food-spin-location-store");
+
+  const activateAddressTab = () => {
+    addressTitle.classList.toggle("food-spin__location-title--active");
+    addressBord.classList.toggle("food-spin__location-bord--active");
+    pickupTitle.classList.toggle("food-spin__location-title--active");
+    pickupBord.classList.toggle("food-spin__location-bord--active");
+    locateStoreSection.classList.toggle("food-spin__location-store--open");
+  };
+
+  addressTitle.addEventListener("click", activateAddressTab);
+  pickupTitle.addEventListener("click", activateAddressTab);
+});
+
