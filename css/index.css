@@ -193,7 +193,6 @@ body {
 }
 
 .food-spin__rigth {
-  min-height: 90vh;
   margin-top: 65px;
   flex-basis: 750px;
 }
@@ -773,4 +772,206 @@ body {
 
 .food-spin__location-indicator{
   stroke: var(--title-color);
+}
+
+
+
+
+
+
+
+
+
+.cart-summary {
+  display: none;
+  max-width: 500px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0%;
+  left: 79%;
+  z-index: 1000;
+  height: 100%;
+}
+
+.cart-summary__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-bottom: 3px solid #F5F5F5;
+}
+
+.cart-summary__title {
+  color: #FF922C;
+  font-size: 28px; 
+  font-weight: var(--font-weight-boldX);
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
+
+.cart-summary__close {
+  color: #FF922C;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-summary__content {
+  padding: 30px;
+}
+
+.cart-summary__item{
+  margin-bottom: 15px;
+}
+
+.cart-summary__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-summary__name,
+.cart-summary__prics{
+  font-weight: var(--font-weight-boldX);
+  font-size: 24px;
+  line-height: 20px;
+  color: #FF922C;
+}
+
+.cart-summary__discount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.cart-summary__discount-description,
+.cart-summary__discount-price{
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--sixteen-pixeles);
+  line-height: var(--eighteen-pixel);
+  color: var(--color-black-medium);
+}
+
+.cart-summary__discount-price__remove {
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--font-size-smalls);
+  line-height: var(--twenty-pixel);
+  color: var(--color-black-medium);
+  text-decoration: none;
+}
+
+.card-summary__add {
+  background: #FF6600;
+  color: var(--color-white);
+  text-align: right;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-weight: var(--font-weight-boldX);
+  font-size: 12px;
+  line-height: 14px;
+  margin-left: auto;
+}
+
+.card-summary__bord{
+  width: 500px;
+  border-bottom: 3px solid #F5F5F5;
+  margin-left: -29px;
+}
+
+.card-summary__add::before {
+  content: '+';
+  margin-right: 8px;
+}
+
+.card-summary__order {
+  margin-bottom: 60px;
+}
+
+.cart-summary__text {
+  color: #FF922C;
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--twenty-pixel);
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.cart-summary__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.card-summary__taxes,
+.card-summary__subtotal{
+  font-weight: var(--font-weight);
+  font-size: var(--sixteen-pixeles);
+  line-height: 21px;
+  color: var(--color-black-medium);
+}
+
+.card-summary__price{
+  font-weight: var(--font-weight-bold);
+  font-size: var(--sixteen-pixeles);
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: var(--color-black-medium);
+}
+
+.card-summary__price--color{
+  font-weight: var(--font-weight-boldX);
+  line-height: 44px;
+}
+
+.card-summary__request{
+  font-weight: var(--font-weight-bold);
+  font-size: var(--sixteen-pixeles);
+  line-height: 21px;
+  color: var(--color-black-medium);
+}
+
+.cart-summary__go-pay {
+  margin-top: 30px;
+  background: #FF6600;
+  color: var(--color-white);
+  border: none;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: var(--twenty-pixel);
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 202px;
+}
+
+.cart-summary__total{
+  font-weight: var(--font-weight-boldX);
+  font-size: var(--sixteen-pixeles);
+  line-height: var(--twenty-pixel);
+  letter-spacing: 0.16em;
+  color: var(--color-white);
+}
+
+.cart-summary__total--price{
+  font-size: var(--twenty-pixel);
+}
+
+
+.cart-summary__payment-methods{
+  display: flex;
+  height: 18px;
+  gap: 12px;
+  list-style-type: none;
+  padding-left: 0px;
+  justify-content: center;
 }

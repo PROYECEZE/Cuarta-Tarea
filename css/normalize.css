@@ -351,3 +351,11 @@ template {
 button {
   border-style: solid;
 }
+
+p{
+  margin: 0px;
+}
+
+h2 {
+  margin: 0px;
+}
