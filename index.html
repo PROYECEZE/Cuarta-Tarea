@@ -240,7 +240,7 @@
           </div>
           <div class="ventana-modal__add-target">
             <button type="submit" class="ventana-page__add-purchases js-ventana-page-add-purchases" aria-label="agregar aire acondicionado al carrito">
-              <span class="ventana-modal__add-cart">ADD DISH</span>
+              <span class="ventana-modal__add-cart ">ADD DISH</span>
             </button>
             <button type="submit" class="ventana-page__add-purchases js-ventana-page-add-purchases" aria-label="agregar aire acondicionado al carrito">
               <span class="ventana-modal__add-cart">BUY NOW</span>
@@ -320,71 +320,75 @@
         </svg>
       </button>
     </section>
-    <section xn class="cart-summary">
-      <div class="cart-summary__top">
-        <h2 class="cart-summary__title">My Shopping Cart</h2>
-          <button class="cart-summary__close"> 
-            <svg aria-label="enter store" width="18" height="18" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 29L12.631 13.34L1.93862 0H4.59672L14.01 11.6879L23.4033 0H26.0614L15.369 13.34L28 29H25.262L14.01 15.0273L2.73804 29H0Z" fill="#FF922C" />
-        </svg>
-      </button>
-      </div>
-      <div class="cart-summary__content">
-        <div class="cart-summary__item">
-          <div class="cart-summary__description">
-            <p class="cart-summary__name">Grilled Salmon Salad</p>
-            <span class="cart-summary__prics">$59.99</span>
-          </div>
-          <div class="cart-summary__discount">
-            <span class="cart-summary__discount-description">Discount Applied From:</span>
-            <span class="cart-summary__discount-price">-$30.00</span>
-          </div>
-          <a class="cart-summary__discount-price__remove" href="#" class="remove-link">Remove</a>
+    <section class="cart-summary__background">
+      <dialog open class="cart-summary js-cart-summary">
+        <div class="cart-summary__top">
+          <h2 class="cart-summary__title">My Shopping Cart</h2>
+          <form method="dialog">
+            <button class="cart-summary__close js-cart-summary-close">
+              <svg class="cart-summary__svg" aria-label="enter store" width="18" height="18" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 29L12.631 13.34L1.93862 0H4.59672L14.01 11.6879L23.4033 0H26.0614L15.369 13.34L28 29H25.262L14.01 15.0273L2.73804 29H0Z" />
+              </svg>
+            </button>
+          </form>
         </div>
-        <button class="card-summary__add">Add More Dishes</button>
-        <div class="card-summary__bord"></div>
-        <div class="card-summary__order">
-          <p class="cart-summary__text">Order Summary</p>
-          <div class="cart-summary__row">
-            <span class="card-summary__subtotal">SubTotal</span>
-            <span class="card-summary__price">$ 49.99</span>
+        <div class="cart-summary__content">
+          <div class="cart-summary__item">
+            <div class="cart-summary__description">
+              <p class="cart-summary__name">Green Goddess Chicken Salad</p>
+              <span class="cart-summary__prics">$32.99</span>
+            </div>
+            <div class="cart-summary__discount">
+              <span class="cart-summary__discount-description">Discount Applied From:</span>
+              <span class="cart-summary__discount-price">-$37.00</span>
+            </div>
+            <a class="cart-summary__discount-price__remove" href="#" class="remove-link">Remove</a>
           </div>
-          <div class="cart-summary__row">
-            <span class="card-summary__taxes">Taxes</span>
-            <span class="card-summary__price">$ 10.00</span>
+          <button class="card-summary__add">Add More Dishes</button>
+          <div class="card-summary__bord"></div>
+          <div class="card-summary__order">
+            <p class="cart-summary__text">Order Summary</p>
+            <div class="cart-summary__row">
+              <span class="card-summary__subtotal">SubTotal</span>
+              <span class="card-summary__price">$ 23.99</span>
+            </div>
+            <div class="cart-summary__row">
+              <span class="card-summary__taxes">Taxes</span>
+              <span class="card-summary__price">$ 9.00</span>
+            </div>
+            <div class="cart-summary__row">
+              <span class="card-summary__request">Order Total</span>
+              <span class="card-summary__price card-summary__price--color">$ 32.99</span>
+            </div>
           </div>
-          <div class="cart-summary__row">
-            <span class="card-summary__request">Order Total</span>
-            <span class="card-summary__price card-summary__price--color">$ 59.99</span>
-          </div>
+          <div class="card-summary__bord"></div>
+          <button class="cart-summary__go-pay">
+            <span class="cart-summary__total">GO TO PAY</span>
+            <span class="cart-summary__total cart-summary__total--price">$32.99</span>
+          </button>
+          <ul class="cart-summary__payment-methods" aria-label="medios de pagos">
+            <li>
+              <img src="image/payment-1.jpg" alt="por visa">
+            </li>
+            <li>
+              <img src="image/payment-2.jpg" alt="por Punto pago">
+            </li>
+            <li>
+              <img src="image/payment-3.jpg" alt="por yappy">
+            </li>
+            <img src="image/payment-4.jpg" alt="por nequi">
+            <li>
+              <img src="image/payment-5.jpg" alt="por mastercard">
+            </li>
+            <li>
+              <img src="image/payment-6.jpg" alt="por sistemaclave">
+            </li>
+            <li>
+              <img src="image/payment-7.jpg" alt="por ACH">
+            </li>
+          </ul>
         </div>
-        <div class="card-summary__bord"></div>
-        <button class="cart-summary__go-pay">
-          <span class="cart-summary__total">GO TO PAY</span>
-          <span class="cart-summary__total cart-summary__total--price">$59.99</span>
-        </button>
-        <ul class="cart-summary__payment-methods" aria-label="medios de pagos">
-          <li>
-            <img src="image/payment-1.jpg" alt="por visa">
-          </li>
-          <li>
-            <img src="image/payment-2.jpg" alt="por Punto pago">
-          </li>
-          <li>
-            <img src="image/payment-3.jpg" alt="por yappy">
-          </li>
-          <img src="image/payment-4.jpg" alt="por nequi">
-          <li>
-            <img src="image/payment-5.jpg" alt="por mastercard">
-          </li>
-          <li>
-            <img src="image/payment-6.jpg" alt="por sistemaclave">
-          </li>
-          <li>
-            <img src="image/payment-7.jpg" alt="por ACH">
-          </li>
-        </ul>
-      </div>
+      </dialog>
     </section>
   </main>
   <script src="index.js"></script>
@@ -392,5 +396,5 @@
 </body>
 </html>
 
- 
+
 

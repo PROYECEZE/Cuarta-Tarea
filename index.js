@@ -5,6 +5,8 @@ const price = document.querySelector('.js-food-spin-price');
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const modalVentana = document.querySelector('.js-ventana-modal');
 const ventanaLocation = document.querySelector('.js-food-spin-location-background');
+const ventanaShopping = document.querySelector('.js-cart-summary')
+const modal = document.querySelector('.js-ventana-modal');
 
 let currentIndex = 0;
 
@@ -35,6 +37,9 @@ function changeInterfaceColors(dishInfo) {
   ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
   ventanaLocation.style.setProperty('--title-color', colorSet.buttonColor);
   ventanaLocation.style.setProperty('--featured-color', colorSet.hoverColor);
+  ventanaShopping.style.setProperty('--box-shopping', colorSet.shadowColor);
+  ventanaShopping.style.setProperty('--text-color', colorSet.buttonColor);
+  ventanaShopping.style.setProperty('--button-color', colorSet.hoverColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
@@ -192,7 +197,6 @@ function updateDescription(newDescription) {
   descriptionElement.textContent = newDescription;
 }
 
-
 const decreaseBtn = document.querySelector('.js-ventana-modal-decrease');
 const increaseBtn = document.querySelector('.js-ventana-modal-increase');
 const quantityInput = document.querySelector('.js-ventana-modal-quantity');
@@ -227,12 +231,10 @@ increaseBtn.addEventListener('click', () => {
 
 const openModalButton = document.querySelector('.js-food-spin-order-button');
 const closeModalButton = document.querySelector('.js-ventana-modal-button');
-const modal = document.querySelector('.js-ventana-modal');
 
 openModalButton.addEventListener('click', () => {
   modal.style.display = 'block';
 });
-
 
 closeModalButton.addEventListener('click', () => {
   modal.style.display = 'none';
@@ -269,5 +271,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addressTitle.addEventListener('click', activateAddressTab);
   pickupTitle.addEventListener('click', activateAddressTab);
+});
+
+const openShoppingButtons = document.querySelectorAll('.js-ventana-page-add-purchases');
+
+openShoppingButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Abre el diálogo del carrito
+    ventanaShopping.setAttribute('open', ''); // Muestra el diálogo del carrito
+    ventanaShopping.style.display = 'block';
+
+    // Oculta la ventana modal
+    modal.style.display = 'none';
+  });
 });
 
