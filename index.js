@@ -277,11 +277,10 @@ const openShoppingButtons = document.querySelectorAll('.js-ventana-page-add-purc
 
 openShoppingButtons.forEach(button => {
   button.addEventListener('click', () => {
-    // Abre el diálogo del carrito
-    ventanaShopping.setAttribute('open', ''); // Muestra el diálogo del carrito
+
+    ventanaShopping.setAttribute('open', ''); 
     ventanaShopping.style.display = 'block';
 
-    // Oculta la ventana modal
     modal.style.display = 'none';
   });
 });
