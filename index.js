@@ -6,7 +6,11 @@ const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items
 const modalVentana = document.querySelector('.js-ventana-modal');
 const ventanaLocation = document.querySelector('.js-food-spin-location-background');
 const ventanaShopping = document.querySelector('.js-cart-summary')
+const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
 const modal = document.querySelector('.js-ventana-modal');
+const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
+const total = [...ventanaShopping.querySelectorAll('.js-card-summary-total')];
+const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
 
 let currentIndex = 0;
 
@@ -24,7 +28,6 @@ function changeInterfaceColors(dishInfo) {
   const button = document.querySelector('.js-food-spin-order-button');
   const colorsvgs = [...document.querySelectorAll('.js-food-spin-svg')];
   const pagination = document.querySelector('.js-carousel-food-spin-pagination');
-  const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
   const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
   const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
 
@@ -80,9 +83,15 @@ function updateDishDetails(currentDish) {
   updateModalImage('image/' + imageSource);
   updatePrice(dishInfo.getAttribute('price'));
   updatemodalPrice(dishInfo.getAttribute('price'));
+  updateShoppingPrice(dishInfo.getAttribute('price'));
+  updateSubTotal(dishInfo.getAttribute('subTotal'));
+  updateTotal(dishInfo.getAttribute('orderTotal'));
+  updateTaxes(dishInfo.getAttribute('taxes'));
   updatemodalNumber(dishInfo.getAttribute('discount'));
+  updateDiscountApplied(dishInfo.getAttribute('applied'));
   updateTitle(dishInfo.getAttribute('title'));
   updatemodalTitle(dishInfo.getAttribute('title'));
+  UpdateShoppingtitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
   updatemodalParagraph(dishInfo.getAttribute('description'));
 }
@@ -111,9 +120,33 @@ function updatemodalPrice(newPrice) {
   modalPrice.textContent = `$${newPrice}`;
 }
 
+function updateShoppingPrice(newPrice) {
+  const shoppingPrice = ventanaShopping.querySelector('.js-cart-summary-prics');
+  shoppingPrice.textContent = `$${newPrice}`;
+}
+
+function updateSubTotal(newPrice) {
+  const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
+  subTotal.textContent = `$${newPrice}`;
+}
+
+function updateTotal(newtotal) {
+  total.textContent = `$${newtotal}`;
+}
+
+function updateTaxes(newPrice) {
+  const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
+  taxes.textContent = `$${newPrice}`;
+}
+
 function updatemodalNumber(newDiscount) {
   const modalNumber = modalVentana.querySelector('.js-ventana-modal-number');
-  modalNumber.textContent = `${newDiscount}%`; 
+  modalNumber.textContent = `$${newDiscount}`; 
+}
+
+function updateDiscountApplied(newDiscount) {
+  const discount = ventanaShopping.querySelector('.js-cart-summary-discount-price');
+  discount.textContent = `-$${newDiscount}`;
 }
 
 function updateTitle(newTitle) {
@@ -126,6 +159,11 @@ function updatemodalTitle(newTitle) {
   modalTitle.textContent = newTitle;
 }
 
+function UpdateShoppingtitle(newTitle) {
+  const shoppingTitle = ventanaShopping.querySelector('.js-cart-summary-name');
+  shoppingTitle.textContent = newTitle;
+}
+
 function updateDescription(newDescription) {
   const description = document.querySelector('.js-food-spin-description');
   description.textContent = newDescription;
@@ -135,6 +173,16 @@ function updatemodalParagraph(newDescription) {
   const modalParagraph = modalVentana.querySelector('.js-ventana-modal-paragraph');
   modalParagraph.textContent = newDescription;
 }
+
+const subtotals = parseFloat(subTotal.textContent.replace('$', ''));
+const taxe = parseFloat(taxes.textContent.replace('$', ''));
+
+const totals = subtotals + taxe;
+
+total.forEach((element) => {
+  element.textContent = `$ ${totals.toFixed(2)}`;
+});
+
 
 class Dishes extends HTMLElement {
   constructor() {
@@ -273,15 +321,18 @@ document.addEventListener('DOMContentLoaded', () => {
   pickupTitle.addEventListener('click', activateAddressTab);
 });
 
-const openShoppingButtons = document.querySelectorAll('.js-ventana-page-add-purchases');
+const closeCartButton = document.querySelector('.js-cart-summary-close');
 
-openShoppingButtons.forEach(button => {
+modalButtons.forEach(button => {
   button.addEventListener('click', () => {
 
-    ventanaShopping.setAttribute('open', ''); 
-    ventanaShopping.style.display = 'block';
+    ventanaShopping.setAttribute('open', 'true'); 
+    ventanaShopping.style.opacity= '1';
 
     modal.style.display = 'none';
   });
 });
 
+closeCartButton.addEventListener('click', () => {
+  ventanaShopping.removeAttribute('open');
+});
