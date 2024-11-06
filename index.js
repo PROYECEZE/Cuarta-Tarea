@@ -8,9 +8,7 @@ const ventanaLocation = document.querySelector('.js-food-spin-location-backgroun
 const ventanaShopping = document.querySelector('.js-cart-summary')
 const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
 const modal = document.querySelector('.js-ventana-modal');
-const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
-const total = [...ventanaShopping.querySelectorAll('.js-card-summary-total')];
-const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
+
 
 let currentIndex = 0;
 
@@ -85,13 +83,13 @@ function updateDishDetails(currentDish) {
   updatemodalPrice(dishInfo.getAttribute('price'));
   updateShoppingPrice(dishInfo.getAttribute('price'));
   updateSubTotal(dishInfo.getAttribute('subTotal'));
-  updateTotal(dishInfo.getAttribute('orderTotal'));
+  updateTotal(dishInfo.getAttribute('price'));
   updateTaxes(dishInfo.getAttribute('taxes'));
   updatemodalNumber(dishInfo.getAttribute('discount'));
   updateDiscountApplied(dishInfo.getAttribute('applied'));
   updateTitle(dishInfo.getAttribute('title'));
   updatemodalTitle(dishInfo.getAttribute('title'));
-  UpdateShoppingtitle(dishInfo.getAttribute('title'));
+  updateShoppingtitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
   updatemodalParagraph(dishInfo.getAttribute('description'));
 }
@@ -131,7 +129,7 @@ function updateSubTotal(newPrice) {
 }
 
 function updateTotal(newtotal) {
-  total.textContent = `$${newtotal}`;
+  total.forEach((totalItem) => (totalItem.textContent = `$${newtotal}`));
 }
 
 function updateTaxes(newPrice) {
@@ -159,7 +157,7 @@ function updatemodalTitle(newTitle) {
   modalTitle.textContent = newTitle;
 }
 
-function UpdateShoppingtitle(newTitle) {
+function updateShoppingtitle(newTitle) {
   const shoppingTitle = ventanaShopping.querySelector('.js-cart-summary-name');
   shoppingTitle.textContent = newTitle;
 }
@@ -174,6 +172,9 @@ function updatemodalParagraph(newDescription) {
   modalParagraph.textContent = newDescription;
 }
 
+const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
+const total = [...ventanaShopping.querySelectorAll('.js-card-summary-total')];
+const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
 const subtotals = parseFloat(subTotal.textContent.replace('$', ''));
 const taxe = parseFloat(taxes.textContent.replace('$', ''));
 
@@ -325,8 +326,7 @@ const closeCartButton = document.querySelector('.js-cart-summary-close');
 
 modalButtons.forEach(button => {
   button.addEventListener('click', () => {
-
-    ventanaShopping.setAttribute('open', 'true'); 
+    ventanaShopping.classList.toggle('cart-summary--active'); 
     ventanaShopping.style.opacity= '1';
 
     modal.style.display = 'none';
@@ -334,5 +334,5 @@ modalButtons.forEach(button => {
 });
 
 closeCartButton.addEventListener('click', () => {
-  ventanaShopping.removeAttribute('open');
+  ventanaShopping.classList.toggle('cart-summary--active');
 });
