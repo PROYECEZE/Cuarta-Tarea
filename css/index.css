@@ -790,11 +790,11 @@ body {
   --box-shopping: rgba(255, 102, 0, 0.25);
   box-shadow: 0px 0px 70px 20px var(--box-shopping);
   transform: translateX(200%);
-  transition: transform 0.4s ease;
+  transition: transform 0.7s ease, opacity 0.7s ease;
   opacity: 0;
 }
 
-.cart-summary--active {
+.cart-summary.cart-summary--active {
   transform: translateX(0);
   opacity: 1;
 }
@@ -959,7 +959,8 @@ body {
   cursor: pointer;
   margin-bottom: 30px;
   display: flex;
-  gap: 197px;
+  align-items: center;
+  gap: 195px;
   font-weight: var(--font-weight-boldX);
   font-size: var(--sixteen-pixeles);
   line-height: var(--twenty-pixel);

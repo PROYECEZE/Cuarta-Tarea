@@ -89,7 +89,7 @@ function updateDishDetails(currentDish) {
   updateDiscountApplied(dishInfo.getAttribute('applied'));
   updateTitle(dishInfo.getAttribute('title'));
   updatemodalTitle(dishInfo.getAttribute('title'));
-  updateShoppingtitle(dishInfo.getAttribute('title'));
+  updateShoppingTitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
   updatemodalParagraph(dishInfo.getAttribute('description'));
 }
@@ -157,7 +157,7 @@ function updatemodalTitle(newTitle) {
   modalTitle.textContent = newTitle;
 }
 
-function updateShoppingtitle(newTitle) {
+function updateShoppingTitle(newTitle) {
   const shoppingTitle = ventanaShopping.querySelector('.js-cart-summary-name');
   shoppingTitle.textContent = newTitle;
 }
@@ -327,7 +327,6 @@ const closeCartButton = document.querySelector('.js-cart-summary-close');
 modalButtons.forEach(button => {
   button.addEventListener('click', () => {
     ventanaShopping.classList.toggle('cart-summary--active'); 
-    ventanaShopping.style.opacity= '1';
 
     modal.style.display = 'none';
   });
