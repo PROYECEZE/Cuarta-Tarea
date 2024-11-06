@@ -329,8 +329,8 @@ body {
 }
 
 .carousel-food-spin__img {
-  width: 290px;
-  margin: 0px;
+width: 290px;
+margin: 0px;
 }
 
 .carousel-food-spin__item-img {
@@ -355,7 +355,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: var(--color-white);
   --modal-box: rgba(255, 146, 44, 0.5);
   box-shadow: 0px 0px 25px var(--modal-box);
   border-radius: 50px;
@@ -812,7 +812,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  border-bottom: 3px solid #F5F5F5;
+  border-bottom: 3px solid var(--color-whiteX);
 }
 
 .cart-summary__title {
