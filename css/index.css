@@ -959,7 +959,7 @@ body {
   cursor: pointer;
   margin-bottom: 30px;
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 195px;
   font-weight: var(--font-weight-boldX);
   font-size: var(--sixteen-pixeles);
