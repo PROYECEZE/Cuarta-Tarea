@@ -794,7 +794,7 @@ body {
   opacity: 0;
 }
 
-.cart-summary.cart-summary--active {
+.cart-summary--active {
   transform: translateX(0);
   opacity: 1;
 }
