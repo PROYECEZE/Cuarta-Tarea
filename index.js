@@ -5,6 +5,10 @@ const price = document.querySelector('.js-food-spin-price');
 const dishesPlatos = [...document.querySelectorAll('.js-carousel-food-spin-items')];
 const modalVentana = document.querySelector('.js-ventana-modal');
 const ventanaLocation = document.querySelector('.js-food-spin-location-background');
+const ventanaShopping = document.querySelector('.js-cart-summary')
+const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
+const modal = document.querySelector('.js-ventana-modal');
+
 
 let currentIndex = 0;
 
@@ -22,7 +26,6 @@ function changeInterfaceColors(dishInfo) {
   const button = document.querySelector('.js-food-spin-order-button');
   const colorsvgs = [...document.querySelectorAll('.js-food-spin-svg')];
   const pagination = document.querySelector('.js-carousel-food-spin-pagination');
-  const modalButtons = [...modalVentana.querySelectorAll('.js-ventana-page-add-purchases')];
   const modalContent = modalVentana.querySelector('.js-ventana-modal-content');
   const modalClose = modalVentana.querySelector('.js-ventana-modal-button');
 
@@ -35,6 +38,9 @@ function changeInterfaceColors(dishInfo) {
   ventanaLocation.style.setProperty('--modal-box', colorSet.shadowColor);
   ventanaLocation.style.setProperty('--title-color', colorSet.buttonColor);
   ventanaLocation.style.setProperty('--featured-color', colorSet.hoverColor);
+  ventanaShopping.style.setProperty('--box-shopping', colorSet.shadowColor);
+  ventanaShopping.style.setProperty('--text-color', colorSet.buttonColor);
+  ventanaShopping.style.setProperty('--button-color', colorSet.hoverColor);
 
   prevBtn.style.setProperty('--bg-color', colorSet.buttonColor);
   prevBtn.style.setProperty('--shadow-bg', colorSet.shadowColor);
@@ -75,9 +81,15 @@ function updateDishDetails(currentDish) {
   updateModalImage('image/' + imageSource);
   updatePrice(dishInfo.getAttribute('price'));
   updatemodalPrice(dishInfo.getAttribute('price'));
+  updateShoppingPrice(dishInfo.getAttribute('price'));
+  updateSubTotal(dishInfo.getAttribute('subTotal'));
+  updateTotal(dishInfo.getAttribute('price'));
+  updateTaxes(dishInfo.getAttribute('taxes'));
   updatemodalNumber(dishInfo.getAttribute('discount'));
+  updateDiscountApplied(dishInfo.getAttribute('applied'));
   updateTitle(dishInfo.getAttribute('title'));
   updatemodalTitle(dishInfo.getAttribute('title'));
+  updateShoppingTitle(dishInfo.getAttribute('title'));
   updateDescription(dishInfo.getAttribute('description'));
   updatemodalParagraph(dishInfo.getAttribute('description'));
 }
@@ -106,9 +118,33 @@ function updatemodalPrice(newPrice) {
   modalPrice.textContent = `$${newPrice}`;
 }
 
+function updateShoppingPrice(newPrice) {
+  const shoppingPrice = ventanaShopping.querySelector('.js-cart-summary-prics');
+  shoppingPrice.textContent = `$${newPrice}`;
+}
+
+function updateSubTotal(newPrice) {
+  const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
+  subTotal.textContent = `$${newPrice}`;
+}
+
+function updateTotal(newtotal) {
+  total.forEach((totalItem) => (totalItem.textContent = `$${newtotal}`));
+}
+
+function updateTaxes(newPrice) {
+  const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
+  taxes.textContent = `$${newPrice}`;
+}
+
 function updatemodalNumber(newDiscount) {
   const modalNumber = modalVentana.querySelector('.js-ventana-modal-number');
-  modalNumber.textContent = `${newDiscount}%`; 
+  modalNumber.textContent = `$${newDiscount}`; 
+}
+
+function updateDiscountApplied(newDiscount) {
+  const discount = ventanaShopping.querySelector('.js-cart-summary-discount-price');
+  discount.textContent = `-$${newDiscount}`;
 }
 
 function updateTitle(newTitle) {
@@ -121,6 +157,11 @@ function updatemodalTitle(newTitle) {
   modalTitle.textContent = newTitle;
 }
 
+function updateShoppingTitle(newTitle) {
+  const shoppingTitle = ventanaShopping.querySelector('.js-cart-summary-name');
+  shoppingTitle.textContent = newTitle;
+}
+
 function updateDescription(newDescription) {
   const description = document.querySelector('.js-food-spin-description');
   description.textContent = newDescription;
@@ -130,6 +171,19 @@ function updatemodalParagraph(newDescription) {
   const modalParagraph = modalVentana.querySelector('.js-ventana-modal-paragraph');
   modalParagraph.textContent = newDescription;
 }
+
+const subTotal = ventanaShopping.querySelector('.js-card-summary-price');
+const total = [...ventanaShopping.querySelectorAll('.js-card-summary-total')];
+const taxes = ventanaShopping.querySelector('.js-card-summary-taxes');
+const subtotals = parseFloat(subTotal.textContent.replace('$', ''));
+const taxe = parseFloat(taxes.textContent.replace('$', ''));
+
+const totals = subtotals + taxe;
+
+total.forEach((element) => {
+  element.textContent = `$ ${totals.toFixed(2)}`;
+});
+
 
 class Dishes extends HTMLElement {
   constructor() {
@@ -192,7 +246,6 @@ function updateDescription(newDescription) {
   descriptionElement.textContent = newDescription;
 }
 
-
 const decreaseBtn = document.querySelector('.js-ventana-modal-decrease');
 const increaseBtn = document.querySelector('.js-ventana-modal-increase');
 const quantityInput = document.querySelector('.js-ventana-modal-quantity');
@@ -227,12 +280,10 @@ increaseBtn.addEventListener('click', () => {
 
 const openModalButton = document.querySelector('.js-food-spin-order-button');
 const closeModalButton = document.querySelector('.js-ventana-modal-button');
-const modal = document.querySelector('.js-ventana-modal');
 
 openModalButton.addEventListener('click', () => {
   modal.style.display = 'block';
 });
-
 
 closeModalButton.addEventListener('click', () => {
   modal.style.display = 'none';
@@ -271,3 +322,16 @@ document.addEventListener('DOMContentLoaded', () => {
   pickupTitle.addEventListener('click', activateAddressTab);
 });
 
+const closeCartButton = document.querySelector('.js-cart-summary-close');
+
+modalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    ventanaShopping.classList.toggle('cart-summary--active'); 
+
+    modal.style.display = 'none';
+  });
+});
+
+closeCartButton.addEventListener('click', () => {
+  ventanaShopping.classList.toggle('cart-summary--active');
+});
